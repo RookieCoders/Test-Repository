@@ -1,0 +1,26 @@
+[
+  {
+    "notebook": "01_data_audit_and_protocol.ipynb",
+    "mode": "quick",
+    "started_utc": "2026-11-06T11:51:11.690929+00:00",
+    "status": "executed"
+  },
+  {
+    "notebook": "02_pilot_forecasting.ipynb",
+    "mode": "quick",
+    "started_utc": "2026-11-06T11:51:23.634662+00:00",
+    "status": "executed"
+  },
+  {
+    "notebook": "03_streaming_comparison.ipynb",
+    "mode": "quick",
+    "started_utc": "2026-11-06T11:51:35.093231+00:00",
+    "status": "executed"
+  },
+  {
+    "notebook": "04_nonstationarity_analysis.ipynb",
+    "mode": "quick",
+    "started_utc": "2026-11-06T11:51:50.837678+00:00",
+    "status": "executed"
+  }
+]

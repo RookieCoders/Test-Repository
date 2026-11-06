@@ -1,0 +1,689 @@
+{
+  "created_utc": "2026-11-06T12:07:17.351530+00:00",
+  "git": {
+    "commit": null,
+    "commit_status": "unavailable (unborn or unreadable HEAD)",
+    "dirty": true,
+    "working_tree_code_sha256": "e74862e368713f957c2b0594919cf3f6e7657298dcb8c3bfde90b249e4606af9"
+  },
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "statsmodels": "0.15.0",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0",
+    "pytest": "9.2.0"
+  },
+  "dataset_category": "synthetic validation; optional local original-archive checksum only",
+  "checks": [
+    {
+      "name": "existing_and_adversarial_tests",
+      "status": "pass"
+    },
+    {
+      "name": "git_artifact_exclusion",
+      "status": "pass"
+    },
+    {
+      "name": "git_commit_provenance",
+      "status": "skipped",
+      "reason": "No readable commit; code-tree hash recorded instead. Commit source before a publishable study."
+    },
+    {
+      "name": "local_archive_source_checksum",
+      "status": "pass"
+    },
+    {
+      "name": "bounded_clean_kernel_notebook",
+      "status": "pass"
+    },
+    {
+      "name": "DNH_fidelity_scientific_validity_and_full_study",
+      "status": "skipped",
+      "reason": "Not established by software checks; full study deliberately not run"
+    }
+  ],
+  "tests": [
+    {
+      "name": "test_outer_loss_gradients_match_finite_difference",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_growth_trigger_candidate_and_pruning_optimizer_state",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_frequency_meta_probes_do_not_mutate_model_and_fixed_disables_adaptation",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_causal_forecasts_resume_seed_and_reject_mismatch",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_resume_restores_grown_topology_and_all_optimizer_states",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_individual_ablation_switches[no_growth]",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_individual_ablation_switches[no_pruning]",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_individual_ablation_switches[no_frequency]",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_predict_alignment_future_invariance_and_development_scale",
+      "suite": "tests.test_protocol",
+      "status": "pass"
+    },
+    {
+      "name": "test_resume_matches_uninterrupted_and_rejects_changed_input",
+      "suite": "tests.test_protocol",
+      "status": "pass"
+    },
+    {
+      "name": "test_invalid_split_and_constant_mase",
+      "suite": "tests.test_protocol",
+      "status": "pass"
+    },
+    {
+      "name": "test_paired_control_has_identical_prechange_history",
+      "suite": "tests.test_protocol",
+      "status": "pass"
+    },
+    {
+      "name": "test_tsf_preserves_zero_and_missing_and_checksum",
+      "suite": "tests.test_protocol",
+      "status": "pass"
+    },
+    {
+      "name": "test_detect_shifted_origins_actuals_and_missing_rows",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_detect_leaked_scaling_and_current_target_oracle",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_detect_update_before_prediction",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_runner_calls_real_predict_before_observe",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_baseline_calls_forecast_before_append",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_detect_bad_structural_state",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_timestamp_audit_uses_original_timestamp_representation",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_bad_data_checksum_saves_failed_audit",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    }
+  ],
+  "experiment_inventory": [
+    {
+      "path": "results/audit_electricity_notebook/experiments/inspired_pilot/17/adaptive",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/audit_electricity_notebook/experiments/inspired_pilot/17/fixed",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/audit_electricity_notebook/experiments/inspired_pilot/29/adaptive",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/audit_electricity_notebook/experiments/inspired_pilot/29/fixed",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/audit_electricity_notebook/experiments/inspired_pilot/43/adaptive",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/audit_electricity_notebook/experiments/inspired_pilot/43/fixed",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/audit_electricity_notebook/experiments/pilot/electricity",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/audit_review_final/experiment/adaptive",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/audit_review_final/experiment/baseline",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/audit_review_final/experiment/fixed",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/audit_review_final/experiment/future_probe",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/audit_review_final/experiment/resumed",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/bounded_pilot/synthetic_stationary",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/dnh_inspired_pilot/T1/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/dnh_inspired_pilot/T1/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/electricity_pilot/T1",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/initial_synthetic_quick/comparison/synthetic_100",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/initial_synthetic_quick/comparison/synthetic_101",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/initial_synthetic_quick/comparison/synthetic_102",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/initial_synthetic_quick/comparison/synthetic_103",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/initial_synthetic_quick/comparison/synthetic_104",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/initial_synthetic_quick/controlled/17/abrupt",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/initial_synthetic_quick/controlled/17/gradual",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/initial_synthetic_quick/controlled/17/noise",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/initial_synthetic_quick/controlled/17/recurring",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/initial_synthetic_quick/controlled/17/stationary",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/initial_synthetic_quick/pilot/synthetic_stationary_diagnostic",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/inspired_v1_bounded_pilot/T1/17/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/inspired_v1_bounded_pilot/T1/17/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/inspired_v1_bounded_pilot/T1/29/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/inspired_v1_bounded_pilot/T1/29/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/inspired_v1_bounded_pilot/T1/43/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/inspired_v1_bounded_pilot/T1/43/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/inspired_v1_bounded_pilot/baselines/T1",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/comparison/T1",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/comparison/T10",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/comparison/T100",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/comparison/T101",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/comparison/T102",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/controlled/17/abrupt",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/controlled/17/gradual",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/controlled/17/noise",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/controlled/17/recurring",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/controlled/17/stationary",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_ablations/T1/17/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_ablations/T1/17/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_ablations/T1/17/no_frequency",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_ablations/T1/17/no_growth",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_ablations/T1/17/no_pruning",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_ablations/baselines/T1",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T1/17/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T1/17/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T1/29/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T1/29/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T1/43/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T1/43/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T10/17/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T10/17/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T10/29/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T10/29/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T10/43/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T10/43/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T100/17/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T100/17/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T100/29/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T100/29/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T100/43/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T100/43/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T101/17/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T101/17/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T101/29/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T101/29/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T101/43/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T101/43/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T102/17/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T102/17/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T102/29/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T102/29/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T102/43/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/T102/43/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/baselines/T1",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/baselines/T10",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/baselines/T100",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/baselines/T101",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_comparison/baselines/T102",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/17/adaptive/abrupt",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/17/adaptive/gradual",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/17/adaptive/noise",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/17/adaptive/recurring",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/17/adaptive/stationary",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/17/fixed/abrupt",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/17/fixed/gradual",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/17/fixed/noise",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/17/fixed/recurring",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/17/fixed/stationary",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/29/adaptive/abrupt",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/29/adaptive/gradual",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/29/adaptive/noise",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/29/adaptive/recurring",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/29/adaptive/stationary",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/29/fixed/abrupt",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/29/fixed/gradual",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/29/fixed/noise",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/29/fixed/recurring",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/29/fixed/stationary",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/43/adaptive/abrupt",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/43/adaptive/gradual",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/43/adaptive/noise",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/43/adaptive/recurring",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/43/adaptive/stationary",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/43/fixed/abrupt",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/43/fixed/gradual",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/43/fixed/noise",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/43/fixed/recurring",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/43/fixed/stationary",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/baselines/abrupt",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/baselines/gradual",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/baselines/noise",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/baselines/recurring",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_controlled/17/baselines/stationary",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_pilot/17/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_pilot/17/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_pilot/29/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_pilot/29/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_pilot/43/adaptive",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/inspired_pilot/43/fixed",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/quick/pilot/electricity",
+      "status": "incomplete"
+    },
+    {
+      "path": "results/validation_current/experiment/adaptive",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/validation_current/experiment/baseline",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/validation_current/experiment/fixed",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/validation_current/experiment/future_probe",
+      "status": "pass_with_skips"
+    },
+    {
+      "path": "results/validation_current/experiment/resumed",
+      "status": "pass_with_skips"
+    }
+  ],
+  "status": "pass_with_skips"
+}

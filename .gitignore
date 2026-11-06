@@ -1,0 +1,22 @@
+__pycache__/
+.pytest_cache/
+.venv/
+data/raw/*
+!data/raw/.gitkeep
+.ipynb_checkpoints/
+# Experiment outputs remain local / external artifacts, never source control.
+results/**
+!results/*.md
+!results/experiment_inventory.json
+!results/execution_log.json
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.npz
+*.zip
+*.part
+# Downloaded primary-source payloads (retain small manifests and search evidence).
+sources/*.html
+sources/*.xml
+sources/dnh.txt

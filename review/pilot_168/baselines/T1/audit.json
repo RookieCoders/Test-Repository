@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "audit_type": "retrospective_incomplete",
+  "created_utc": "2026-11-06T12:07:29.915661+00:00",
+  "configuration": {
+    "development": 720,
+    "steps": 168,
+    "series": 1,
+    "refit_every": 24,
+    "orders": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "season": 24,
+    "seeds": [
+      17,
+      29,
+      43
+    ]
+  },
+  "model_configuration": null,
+  "git": {
+    "commit": null,
+    "reason": "Not recorded at execution; do not substitute current HEAD"
+  },
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "statsmodels": "0.15.0",
+    "scipy": "1.17.0"
+  },
+  "dataset": {
+    "kind": "unknown",
+    "input_series_sha256": null,
+    "reason": "No explicit observation provenance retained"
+  },
+  "seeds": {
+    "model": null,
+    "configured_generator_seeds": [
+      17,
+      29,
+      43
+    ],
+    "actual_generator_seed": null
+  },
+  "checks": [
+    {
+      "name": "saved_forecast_alignment_and_arithmetic",
+      "status": "pass"
+    },
+    {
+      "name": "dataset_identity_and_checksum",
+      "status": "skipped",
+      "reason": "Legacy run lacks required provenance/trace or replay; existing software tests cannot retroactively attest this experiment"
+    },
+    {
+      "name": "development_preprocessing",
+      "status": "skipped",
+      "reason": "Legacy run lacks required provenance/trace or replay; existing software tests cannot retroactively attest this experiment"
+    },
+    {
+      "name": "predict_before_update",
+      "status": "skipped",
+      "reason": "Legacy run lacks required provenance/trace or replay; existing software tests cannot retroactively attest this experiment"
+    },
+    {
+      "name": "behavioral_checkpoint_restore",
+      "status": "skipped",
+      "reason": "Legacy run lacks required provenance/trace or replay; existing software tests cannot retroactively attest this experiment"
+    },
+    {
+      "name": "structural_operations",
+      "status": "skipped",
+      "reason": "Legacy run lacks required provenance/trace or replay; existing software tests cannot retroactively attest this experiment"
+    }
+  ],
+  "status": "incomplete"
+}

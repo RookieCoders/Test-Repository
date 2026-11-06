@@ -1,0 +1,605 @@
+{
+  "fingerprint": "c8de46c761197a4ab04237795f89e1cfab22ae48c391f108b9db3eea3583f585",
+  "next": 192,
+  "order": [
+    1,
+    0,
+    0
+  ],
+  "trials": [
+    {
+      "order": [
+        1,
+        0,
+        0
+      ],
+      "aic": 1525.6974634653675,
+      "converged": true,
+      "warnings": []
+    },
+    {
+      "order": [
+        1,
+        1,
+        0
+      ],
+      "aic": 1546.2139104974424,
+      "converged": true,
+      "warnings": []
+    }
+  ],
+  "protocol": [
+    {
+      "t": 168,
+      "phase": "predict"
+    },
+    {
+      "t": 168,
+      "phase": "reveal"
+    },
+    {
+      "t": 168,
+      "phase": "record"
+    },
+    {
+      "t": 168,
+      "phase": "update"
+    },
+    {
+      "t": 169,
+      "phase": "predict"
+    },
+    {
+      "t": 169,
+      "phase": "reveal"
+    },
+    {
+      "t": 169,
+      "phase": "record"
+    },
+    {
+      "t": 169,
+      "phase": "update"
+    },
+    {
+      "t": 170,
+      "phase": "predict"
+    },
+    {
+      "t": 170,
+      "phase": "reveal"
+    },
+    {
+      "t": 170,
+      "phase": "record"
+    },
+    {
+      "t": 170,
+      "phase": "update"
+    },
+    {
+      "t": 171,
+      "phase": "predict"
+    },
+    {
+      "t": 171,
+      "phase": "reveal"
+    },
+    {
+      "t": 171,
+      "phase": "record"
+    },
+    {
+      "t": 171,
+      "phase": "update"
+    },
+    {
+      "t": 172,
+      "phase": "predict"
+    },
+    {
+      "t": 172,
+      "phase": "reveal"
+    },
+    {
+      "t": 172,
+      "phase": "record"
+    },
+    {
+      "t": 172,
+      "phase": "update"
+    },
+    {
+      "t": 173,
+      "phase": "predict"
+    },
+    {
+      "t": 173,
+      "phase": "reveal"
+    },
+    {
+      "t": 173,
+      "phase": "record"
+    },
+    {
+      "t": 173,
+      "phase": "update"
+    },
+    {
+      "t": 174,
+      "phase": "predict"
+    },
+    {
+      "t": 174,
+      "phase": "reveal"
+    },
+    {
+      "t": 174,
+      "phase": "record"
+    },
+    {
+      "t": 174,
+      "phase": "update"
+    },
+    {
+      "t": 175,
+      "phase": "predict"
+    },
+    {
+      "t": 175,
+      "phase": "reveal"
+    },
+    {
+      "t": 175,
+      "phase": "record"
+    },
+    {
+      "t": 175,
+      "phase": "update"
+    },
+    {
+      "t": 176,
+      "phase": "predict"
+    },
+    {
+      "t": 176,
+      "phase": "reveal"
+    },
+    {
+      "t": 176,
+      "phase": "record"
+    },
+    {
+      "t": 176,
+      "phase": "update"
+    },
+    {
+      "t": 177,
+      "phase": "predict"
+    },
+    {
+      "t": 177,
+      "phase": "reveal"
+    },
+    {
+      "t": 177,
+      "phase": "record"
+    },
+    {
+      "t": 177,
+      "phase": "update"
+    },
+    {
+      "t": 178,
+      "phase": "predict"
+    },
+    {
+      "t": 178,
+      "phase": "reveal"
+    },
+    {
+      "t": 178,
+      "phase": "record"
+    },
+    {
+      "t": 178,
+      "phase": "update"
+    },
+    {
+      "t": 179,
+      "phase": "predict"
+    },
+    {
+      "t": 179,
+      "phase": "reveal"
+    },
+    {
+      "t": 179,
+      "phase": "record"
+    },
+    {
+      "t": 179,
+      "phase": "update"
+    },
+    {
+      "t": 180,
+      "phase": "predict"
+    },
+    {
+      "t": 180,
+      "phase": "reveal"
+    },
+    {
+      "t": 180,
+      "phase": "record"
+    },
+    {
+      "t": 180,
+      "phase": "update"
+    },
+    {
+      "t": 181,
+      "phase": "predict"
+    },
+    {
+      "t": 181,
+      "phase": "reveal"
+    },
+    {
+      "t": 181,
+      "phase": "record"
+    },
+    {
+      "t": 181,
+      "phase": "update"
+    },
+    {
+      "t": 182,
+      "phase": "predict"
+    },
+    {
+      "t": 182,
+      "phase": "reveal"
+    },
+    {
+      "t": 182,
+      "phase": "record"
+    },
+    {
+      "t": 182,
+      "phase": "update"
+    },
+    {
+      "t": 183,
+      "phase": "predict"
+    },
+    {
+      "t": 183,
+      "phase": "reveal"
+    },
+    {
+      "t": 183,
+      "phase": "record"
+    },
+    {
+      "t": 183,
+      "phase": "update"
+    },
+    {
+      "t": 184,
+      "phase": "predict"
+    },
+    {
+      "t": 184,
+      "phase": "reveal"
+    },
+    {
+      "t": 184,
+      "phase": "record"
+    },
+    {
+      "t": 184,
+      "phase": "update"
+    },
+    {
+      "t": 185,
+      "phase": "predict"
+    },
+    {
+      "t": 185,
+      "phase": "reveal"
+    },
+    {
+      "t": 185,
+      "phase": "record"
+    },
+    {
+      "t": 185,
+      "phase": "update"
+    },
+    {
+      "t": 186,
+      "phase": "predict"
+    },
+    {
+      "t": 186,
+      "phase": "reveal"
+    },
+    {
+      "t": 186,
+      "phase": "record"
+    },
+    {
+      "t": 186,
+      "phase": "update"
+    },
+    {
+      "t": 187,
+      "phase": "predict"
+    },
+    {
+      "t": 187,
+      "phase": "reveal"
+    },
+    {
+      "t": 187,
+      "phase": "record"
+    },
+    {
+      "t": 187,
+      "phase": "update"
+    },
+    {
+      "t": 188,
+      "phase": "predict"
+    },
+    {
+      "t": 188,
+      "phase": "reveal"
+    },
+    {
+      "t": 188,
+      "phase": "record"
+    },
+    {
+      "t": 188,
+      "phase": "update"
+    },
+    {
+      "t": 189,
+      "phase": "predict"
+    },
+    {
+      "t": 189,
+      "phase": "reveal"
+    },
+    {
+      "t": 189,
+      "phase": "record"
+    },
+    {
+      "t": 189,
+      "phase": "update"
+    },
+    {
+      "t": 190,
+      "phase": "predict"
+    },
+    {
+      "t": 190,
+      "phase": "reveal"
+    },
+    {
+      "t": 190,
+      "phase": "record"
+    },
+    {
+      "t": 190,
+      "phase": "update"
+    },
+    {
+      "t": 191,
+      "phase": "predict"
+    },
+    {
+      "t": 191,
+      "phase": "reveal"
+    },
+    {
+      "t": 191,
+      "phase": "record"
+    },
+    {
+      "t": 191,
+      "phase": "update"
+    }
+  ],
+  "events": [
+    {
+      "t": 168,
+      "kind": "timing",
+      "forecast_seconds": 0.002878695999925185,
+      "update_seconds": 0.0038858810000874655
+    },
+    {
+      "t": 169,
+      "kind": "timing",
+      "forecast_seconds": 0.00361378100001275,
+      "update_seconds": 0.0035545829998682166
+    },
+    {
+      "t": 170,
+      "kind": "timing",
+      "forecast_seconds": 0.0027503399999204703,
+      "update_seconds": 0.004253396999956749
+    },
+    {
+      "t": 171,
+      "kind": "timing",
+      "forecast_seconds": 0.002740769999945769,
+      "update_seconds": 0.0032779989999198733
+    },
+    {
+      "t": 172,
+      "kind": "timing",
+      "forecast_seconds": 0.0026831750001292676,
+      "update_seconds": 0.0038132040001528367
+    },
+    {
+      "t": 173,
+      "kind": "timing",
+      "forecast_seconds": 0.0022883110000293527,
+      "update_seconds": 0.003601909000053638
+    },
+    {
+      "t": 174,
+      "kind": "timing",
+      "forecast_seconds": 0.002034219999814013,
+      "update_seconds": 0.0035101480000321317
+    },
+    {
+      "t": 175,
+      "kind": "timing",
+      "forecast_seconds": 0.008032670999909897,
+      "update_seconds": 0.004031001999919681
+    },
+    {
+      "t": 176,
+      "kind": "timing",
+      "forecast_seconds": 0.0031378139999560517,
+      "update_seconds": 0.0041158139999879495
+    },
+    {
+      "t": 177,
+      "kind": "timing",
+      "forecast_seconds": 0.002310626000053162,
+      "update_seconds": 0.0030895849999978964
+    },
+    {
+      "t": 178,
+      "kind": "timing",
+      "forecast_seconds": 0.002740384999924572,
+      "update_seconds": 0.0029784250000375323
+    },
+    {
+      "t": 179,
+      "kind": "timing",
+      "forecast_seconds": 0.002998663999960627,
+      "update_seconds": 0.0028987370001232193
+    },
+    {
+      "t": 180,
+      "kind": "timing",
+      "forecast_seconds": 0.002433893999977954,
+      "update_seconds": 0.00293491799993717
+    },
+    {
+      "t": 181,
+      "kind": "timing",
+      "forecast_seconds": 0.0028329039998880035,
+      "update_seconds": 0.004036370000221723
+    },
+    {
+      "t": 182,
+      "kind": "timing",
+      "forecast_seconds": 0.00289541699999063,
+      "update_seconds": 0.0032898179999847343
+    },
+    {
+      "t": 183,
+      "kind": "timing",
+      "forecast_seconds": 0.002122696000014912,
+      "update_seconds": 0.0034087320000253385
+    },
+    {
+      "t": 184,
+      "kind": "timing",
+      "forecast_seconds": 0.0029114419999132224,
+      "update_seconds": 0.00392291799994382
+    },
+    {
+      "t": 185,
+      "kind": "timing",
+      "forecast_seconds": 0.0026008730001194635,
+      "update_seconds": 0.0023867129998507153
+    },
+    {
+      "t": 186,
+      "kind": "timing",
+      "forecast_seconds": 0.0030133349998777703,
+      "update_seconds": 0.0037594890000036685
+    },
+    {
+      "t": 187,
+      "kind": "timing",
+      "forecast_seconds": 0.0025780290000056993,
+      "update_seconds": 0.0023344250000718603
+    },
+    {
+      "t": 188,
+      "kind": "timing",
+      "forecast_seconds": 0.002613930999814329,
+      "update_seconds": 0.004627835000064806
+    },
+    {
+      "t": 189,
+      "kind": "timing",
+      "forecast_seconds": 0.00321624499997597,
+      "update_seconds": 0.00302047499985747
+    },
+    {
+      "t": 190,
+      "kind": "timing",
+      "forecast_seconds": 0.002361735000022236,
+      "update_seconds": 0.0036618770000131917
+    },
+    {
+      "t": 191,
+      "kind": "timing",
+      "forecast_seconds": 0.0036777210000309424,
+      "update_seconds": 0.05521410299979834
+    }
+  ],
+  "elapsed_seconds": 0.26779528199995184,
+  "peak_sampled_rss_mb": 640.3828125,
+  "config": {
+    "development": 168,
+    "steps": 24,
+    "series": 5,
+    "refit_every": 24,
+    "orders": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "season": 24,
+    "seeds": [
+      17
+    ]
+  },
+  "hardware": {
+    "device_used": "CPU",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "logical_cpus": 5,
+    "available_memory_gib": 31.90066909790039,
+    "gpu_required": false,
+    "gpu_probe": "No accelerator backend used; GPU availability not probed.",
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "statsmodels": "0.15.0",
+      "scipy": "1.17.0"
+    }
+  },
+  "DNH": "Faithful DNH-HOPE not implemented; separate DNH-inspired v1: research/inspired.py",
+  "memory_measurement": "process RSS sampled per step, not allocation peak; includes shared interpreter",
+  "timing_scope": "stream loop including prior checkpoint writes; excludes initial order search"
+}

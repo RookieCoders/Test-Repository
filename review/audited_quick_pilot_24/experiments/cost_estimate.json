@@ -1,0 +1,5 @@
+{
+  "measured_stream_seconds": 0.26779528199995184,
+  "optimistic_baseline_full_seconds": 241.01575379995666,
+  "assumptions": "same cost per step as this small single series; sequential runs; excludes tuning/order selection, ignores length-dependent costs; not DNH estimate"
+}

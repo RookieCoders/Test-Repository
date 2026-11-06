@@ -1,0 +1,81 @@
+{
+  "date_utc": "2026-11-06",
+  "device": "CPU",
+  "quick_notebooks": "all four executed; see execution_log.json",
+  "quick_runs": {
+    "electricity_pilot_series": 1,
+    "electricity_comparison_series": 5,
+    "paired_synthetic_processes": 5,
+    "synthetic_seeds": [
+      17
+    ]
+  },
+  "bounded_pilot": {
+    "synthetic_series": 1,
+    "development": 720,
+    "forecasts": 168,
+    "generator_seed": 17
+  },
+  "electricity_runs": 7,
+  "DNH_runs": 0,
+  "full_runs": 0,
+  "protocol_tests_passed": 21,
+  "historical_initial_run": {
+    "pilot_synthetic_series": 1,
+    "independent_synthetic_streams": 5,
+    "paired_controlled_processes": 5,
+    "controlled_generator_seeds": [
+      17
+    ]
+  },
+  "DNH_status": "Faithful DNH-HOPE remains unimplemented. User authorized separate DNH-inspired v1; implemented and tested.",
+  "inspired_v1": {
+    "quick_customers": 5,
+    "model_seeds": [
+      17,
+      29,
+      43
+    ],
+    "variants": [
+      "adaptive",
+      "fixed"
+    ],
+    "quick_forecasts_per_customer": 24,
+    "ablation_customers": 1,
+    "ablation_seeds": [
+      17
+    ],
+    "ablations": [
+      "no_growth",
+      "no_pruning",
+      "no_frequency"
+    ],
+    "controlled_generator_seeds": [
+      17
+    ],
+    "controlled_processes": 5,
+    "controlled_model_seeds": [
+      17,
+      29,
+      43
+    ],
+    "bounded_pilot_customers": 1,
+    "bounded_pilot_forecasts": 168,
+    "bounded_pilot_model_seeds": [
+      17,
+      29,
+      43
+    ],
+    "full_experiment_run": false
+  },
+  "audit_review": {
+    "suite": "results/audit_review_final/audit.json",
+    "bounded_electricity_notebook": "results/audit_electricity_notebook/execution_log.json",
+    "synthetic_smoke_executed": true,
+    "historical_incomplete_runs": 115,
+    "intermediate_and_new_audited_runs": 17,
+    "numerical_regression_identical_prediction_files": 7,
+    "full_study_launched": false,
+    "github_actions_remote_run": false
+  }
+}

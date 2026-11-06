@@ -1,0 +1,6 @@
+model,macro_MASE,between_series_MASE_sd,series_count
+ARIMA,0.5681722936077811,,1
+DNH-inspired:adaptive,0.4763021075904758,,1
+DNH-inspired:fixed,0.47255765133301564,,1
+persistence,0.4261241317681466,,1
+seasonal_naive,0.6808562492383933,,1
