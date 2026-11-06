@@ -1,0 +1,14 @@
+[
+  {
+    "name": "dnh",
+    "url": "https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1804338/full",
+    "attempt_utc": "2026-11-06T11:40:04.154911+00:00",
+    "status": 200
+  },
+  {
+    "name": "zenodo",
+    "url": "https://zenodo.org/api/records/4656140",
+    "attempt_utc": "2026-11-06T11:40:05.695954+00:00",
+    "status": 200
+  }
+]

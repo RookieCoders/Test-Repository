@@ -1,0 +1,37 @@
+[
+  {
+    "original": "results/quick/pilot/electricity/predictions.csv",
+    "rerun": "results/audit_electricity_notebook/experiments/pilot/electricity/predictions.csv",
+    "status": "identical"
+  },
+  {
+    "original": "results/quick/inspired_pilot/17/adaptive/predictions.csv",
+    "rerun": "results/audit_electricity_notebook/experiments/inspired_pilot/17/adaptive/predictions.csv",
+    "status": "identical"
+  },
+  {
+    "original": "results/quick/inspired_pilot/17/fixed/predictions.csv",
+    "rerun": "results/audit_electricity_notebook/experiments/inspired_pilot/17/fixed/predictions.csv",
+    "status": "identical"
+  },
+  {
+    "original": "results/quick/inspired_pilot/29/adaptive/predictions.csv",
+    "rerun": "results/audit_electricity_notebook/experiments/inspired_pilot/29/adaptive/predictions.csv",
+    "status": "identical"
+  },
+  {
+    "original": "results/quick/inspired_pilot/29/fixed/predictions.csv",
+    "rerun": "results/audit_electricity_notebook/experiments/inspired_pilot/29/fixed/predictions.csv",
+    "status": "identical"
+  },
+  {
+    "original": "results/quick/inspired_pilot/43/adaptive/predictions.csv",
+    "rerun": "results/audit_electricity_notebook/experiments/inspired_pilot/43/adaptive/predictions.csv",
+    "status": "identical"
+  },
+  {
+    "original": "results/quick/inspired_pilot/43/fixed/predictions.csv",
+    "rerun": "results/audit_electricity_notebook/experiments/inspired_pilot/43/fixed/predictions.csv",
+    "status": "identical"
+  }
+]

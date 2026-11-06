@@ -1,0 +1,7 @@
+{
+  "optimistic_full_seconds": {
+    "adaptive": 89.97696486486052,
+    "fixed": 68.25021801080617
+  },
+  "assumptions": "3 seeds, 10 customers, adaptive and fixed independently; linear scaling in development+evaluation points, fixed width/depth, same filesystem; excludes baselines/data loading/plots; structure and finite-difference costs can change; no full experiment launched"
+}

@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "audit_type": "retrospective_incomplete",
+  "created_utc": "2026-11-06T12:07:29.905653+00:00",
+  "configuration": {
+    "development": 720,
+    "steps": 168,
+    "series": 1,
+    "refit_every": 24,
+    "orders": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "season": 24,
+    "seeds": [
+      17,
+      29,
+      43
+    ]
+  },
+  "model_configuration": {
+    "method": "DNH-inspired v1 (not faithful DNH-HOPE)",
+    "lag": 24,
+    "width": 6,
+    "initial_levels": 2,
+    "max_levels": 4,
+    "rho": 0.5,
+    "learning_rate": 0.003,
+    "ridge": 0.001,
+    "smm_weight": 0.1,
+    "smm_rate": 0.1,
+    "hebbian_alpha": 0.02,
+    "min_frequency": 0.05,
+    "meta_every": 8,
+    "meta_rate": 0.02,
+    "finite_difference": 0.001,
+    "meta_gradient_clip": 0.2,
+    "gradient_clip": 3.0,
+    "growth_threshold": 0.5,
+    "prune_threshold": 0.02,
+    "patience": 8,
+    "merge_rank": 2,
+    "merge_tolerance": 0.01,
+    "complexity_weight": 0.001,
+    "drift_weight": 0.1,
+    "surprise_cap": 25.0,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "ablation_series": 1,
+    "ablation_seeds": [
+      17
+    ]
+  },
+  "git": {
+    "commit": null,
+    "reason": "Not recorded at execution; do not substitute current HEAD"
+  },
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "statsmodels": "0.15.0",
+    "scipy": "1.17.0"
+  },
+  "dataset": {
+    "kind": "unknown",
+    "input_series_sha256": null,
+    "reason": "No explicit observation provenance retained"
+  },
+  "seeds": {
+    "model": 43,
+    "configured_generator_seeds": [
+      17,
+      29,
+      43
+    ],
+    "actual_generator_seed": null
+  },
+  "checks": [
+    {
+      "name": "saved_forecast_alignment_and_arithmetic",
+      "status": "pass"
+    },
+    {
+      "name": "dataset_identity_and_checksum",
+      "status": "skipped",
+      "reason": "Legacy run lacks required provenance/trace or replay; existing software tests cannot retroactively attest this experiment"
+    },
+    {
+      "name": "development_preprocessing",
+      "status": "skipped",
+      "reason": "Legacy run lacks required provenance/trace or replay; existing software tests cannot retroactively attest this experiment"
+    },
+    {
+      "name": "predict_before_update",
+      "status": "skipped",
+      "reason": "Legacy run lacks required provenance/trace or replay; existing software tests cannot retroactively attest this experiment"
+    },
+    {
+      "name": "behavioral_checkpoint_restore",
+      "status": "skipped",
+      "reason": "Legacy run lacks required provenance/trace or replay; existing software tests cannot retroactively attest this experiment"
+    },
+    {
+      "name": "structural_operations",
+      "status": "skipped",
+      "reason": "Legacy run lacks required provenance/trace or replay; existing software tests cannot retroactively attest this experiment"
+    }
+  ],
+  "status": "incomplete"
+}

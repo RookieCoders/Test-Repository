@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-06T12:06:00.207294+00:00",
+  "configuration": {
+    "development": 168,
+    "steps": 24,
+    "series": 5,
+    "refit_every": 24,
+    "orders": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "season": 24,
+    "seeds": [
+      17
+    ]
+  },
+  "model_configuration": {
+    "method": "DNH-inspired v1 (not faithful DNH-HOPE)",
+    "lag": 24,
+    "width": 6,
+    "initial_levels": 2,
+    "max_levels": 4,
+    "rho": 0.5,
+    "learning_rate": 0.003,
+    "ridge": 0.001,
+    "smm_weight": 0.1,
+    "smm_rate": 0.1,
+    "hebbian_alpha": 0.02,
+    "min_frequency": 0.05,
+    "meta_every": 8,
+    "meta_rate": 0.02,
+    "finite_difference": 0.001,
+    "meta_gradient_clip": 0.2,
+    "gradient_clip": 3.0,
+    "growth_threshold": 0.5,
+    "prune_threshold": 0.02,
+    "patience": 8,
+    "merge_rank": 2,
+    "merge_tolerance": 0.01,
+    "complexity_weight": 0.001,
+    "drift_weight": 0.1,
+    "surprise_cap": 25.0,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "ablation_series": 1,
+    "ablation_seeds": [
+      17
+    ]
+  },
+  "git": {
+    "commit": null,
+    "commit_status": "unavailable (unborn or unreadable HEAD)",
+    "dirty": true,
+    "working_tree_code_sha256": "e74862e368713f957c2b0594919cf3f6e7657298dcb8c3bfde90b249e4606af9"
+  },
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "statsmodels": "0.15.0",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0",
+    "pytest": "9.2.0"
+  },
+  "dataset": {
+    "kind": "original_electricity",
+    "series": "T1",
+    "archive_path": "/workspace/Test-Repository/data/raw/electricity_hourly_dataset.zip",
+    "archive_sha256": "eff447075dde68dca0105ab7e2851c5637967ae3bb21556fd8b931f196d5968c",
+    "source_checksum": "md5:18096614662b02640d265ad2a6a416bd",
+    "series_sha256": "17d7ed6a9437bc7fb38016e55098eecc85b1d4c65436b4d4b813ce9215beb4a4",
+    "modification": null,
+    "input_series_sha256": "17d7ed6a9437bc7fb38016e55098eecc85b1d4c65436b4d4b813ce9215beb4a4"
+  },
+  "seeds": {
+    "model": 17,
+    "generator": null
+  },
+  "checks": [
+    {
+      "name": "data_integrity",
+      "status": "pass"
+    },
+    {
+      "name": "observation_origin",
+      "status": "pass"
+    },
+    {
+      "name": "chronology_alignment_errors_and_MASE",
+      "status": "pass"
+    },
+    {
+      "name": "development_only_scaler",
+      "status": "pass"
+    },
+    {
+      "name": "predict_reveal_record_update",
+      "status": "pass"
+    },
+    {
+      "name": "checkpoint_deserialization_and_state",
+      "status": "pass"
+    },
+    {
+      "name": "structural_state_invariants",
+      "status": "pass"
+    },
+    {
+      "name": "behavioral_resume_and_future_perturbation",
+      "status": "skipped",
+      "reason": "Run python scripts/audit.py for independent behavioral tests; not replayed per experiment"
+    },
+    {
+      "name": "scientific_validity_and_DNH_fidelity",
+      "status": "skipped",
+      "reason": "Software checks cannot establish method fidelity or scientific validity; see docs/DNH_INSPIRED.md"
+    }
+  ],
+  "status": "pass_with_skips",
+  "code_fingerprint": "fad6f4c117b50da36d513801d64ff6a358ab9997c1480e0c82a2d68f23e1e44d",
+  "prediction_sha256": "1f87700afb580eceabb78118455c0930bf70d52e8776ec30781ec607f049bed8"
+}

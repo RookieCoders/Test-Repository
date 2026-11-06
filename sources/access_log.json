@@ -1,0 +1,26 @@
+[
+  {
+    "name": "zenodo",
+    "url": "https://zenodo.org/api/records/4656140",
+    "error": "HTTPSConnectionPool(host='zenodo.org', port=443): Max retries exceeded with url: /api/records/4656140 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))",
+    "attempt_date_utc": "2026-11-06"
+  },
+  {
+    "name": "paper",
+    "url": "https://doi.org/10.3389/frai.2026.1804338",
+    "error": "HTTPSConnectionPool(host='doi.org', port=443): Max retries exceeded with url: /10.3389/frai.2026.1804338 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))",
+    "attempt_date_utc": "2026-11-06"
+  },
+  {
+    "name": "frontiers",
+    "url": "https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2026.1804338/full",
+    "error": "HTTPSConnectionPool(host='www.frontiersin.org', port=443): Max retries exceeded with url: /journals/artificial-intelligence/articles/10.3389/frai.2026.1804338/full (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))",
+    "attempt_date_utc": "2026-11-06"
+  },
+  {
+    "name": "github_search",
+    "url": "https://api.github.com/search/repositories?q=%22Dynamic+Nested+Hierarchies%22",
+    "error": "HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /search/repositories?q=%22Dynamic+Nested+Hierarchies%22 (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 403 Forbidden')))",
+    "attempt_date_utc": "2026-11-06"
+  }
+]

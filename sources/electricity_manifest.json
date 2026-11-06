@@ -1,0 +1,13 @@
+{
+  "source_url": "https://zenodo.org/api/records/4656140",
+  "file_url": "https://zenodo.org/api/records/4656140/files/electricity_hourly_dataset.zip/content",
+  "record_id": 4656140,
+  "version": "3",
+  "retrieved_or_verified_utc": "2026-11-06T11:42:01.394082+00:00",
+  "sha256": "eff447075dde68dca0105ab7e2851c5637967ae3bb21556fd8b931f196d5968c",
+  "source_checksum": "md5:18096614662b02640d265ad2a6a416bd",
+  "manual": true,
+  "archive_members": [
+    "electricity_hourly_dataset.tsf"
+  ]
+}
