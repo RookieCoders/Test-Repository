@@ -1,0 +1,213 @@
+{
+  "created_utc": "2026-11-06T16:28:31.737680+00:00",
+  "git": {
+    "commit": "25676f68d9a805331a87dc445c368066f2ae4f43",
+    "commit_status": "available",
+    "dirty": true,
+    "working_tree_code_sha256": "f91a02e7fa5534450b4c75d0ccbc619943de0e4b0dc816f3cce1e83852df6ad1"
+  },
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "statsmodels": "0.15.0",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0",
+    "pytest": "9.2.0"
+  },
+  "dataset_category": "synthetic validation; optional local original-archive checksum only",
+  "checks": [
+    {
+      "name": "existing_and_adversarial_tests",
+      "status": "pass"
+    },
+    {
+      "name": "git_artifact_exclusion",
+      "status": "pass"
+    },
+    {
+      "name": "git_commit_provenance",
+      "status": "pass"
+    },
+    {
+      "name": "local_archive_source_checksum",
+      "status": "pass"
+    },
+    {
+      "name": "bounded_clean_kernel_notebook",
+      "status": "pass"
+    },
+    {
+      "name": "DNH_fidelity_scientific_validity_and_full_study",
+      "status": "skipped",
+      "reason": "Not established by software checks; full study deliberately not run"
+    }
+  ],
+  "tests": [
+    {
+      "name": "test_rolling_cumulative_errors_and_discontinuity_detection",
+      "suite": "tests.test_continuous",
+      "status": "pass"
+    },
+    {
+      "name": "test_freeze_rejects_changed_code_dependencies_and_variant",
+      "suite": "tests.test_continuous",
+      "status": "pass"
+    },
+    {
+      "name": "test_checkpoint_cadence_preserves_uninterrupted_and_resumed_state[run_stream]",
+      "suite": "tests.test_continuous",
+      "status": "pass"
+    },
+    {
+      "name": "test_checkpoint_cadence_preserves_uninterrupted_and_resumed_state[run_inspired]",
+      "suite": "tests.test_continuous",
+      "status": "pass"
+    },
+    {
+      "name": "test_outer_loss_gradients_match_finite_difference",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_growth_trigger_candidate_and_pruning_optimizer_state",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_frequency_meta_probes_do_not_mutate_model_and_fixed_disables_adaptation",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_causal_forecasts_resume_seed_and_reject_mismatch",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_resume_restores_grown_topology_and_all_optimizer_states",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_individual_ablation_switches[no_growth]",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_individual_ablation_switches[no_pruning]",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_individual_ablation_switches[no_frequency]",
+      "suite": "tests.test_inspired",
+      "status": "pass"
+    },
+    {
+      "name": "test_predict_alignment_future_invariance_and_development_scale",
+      "suite": "tests.test_protocol",
+      "status": "pass"
+    },
+    {
+      "name": "test_resume_matches_uninterrupted_and_rejects_changed_input",
+      "suite": "tests.test_protocol",
+      "status": "pass"
+    },
+    {
+      "name": "test_invalid_split_and_constant_mase",
+      "suite": "tests.test_protocol",
+      "status": "pass"
+    },
+    {
+      "name": "test_paired_control_has_identical_prechange_history",
+      "suite": "tests.test_protocol",
+      "status": "pass"
+    },
+    {
+      "name": "test_tsf_preserves_zero_and_missing_and_checksum",
+      "suite": "tests.test_protocol",
+      "status": "pass"
+    },
+    {
+      "name": "test_literal_and_descent_update_sign_and_legacy_arithmetic",
+      "suite": "tests.test_protocol_revision",
+      "status": "pass"
+    },
+    {
+      "name": "test_not_proposed_is_distinct_from_rejected_and_size_blocked",
+      "suite": "tests.test_protocol_revision",
+      "status": "pass"
+    },
+    {
+      "name": "test_rejected_growth_logs_task_gain_and_complexity_cost",
+      "suite": "tests.test_protocol_revision",
+      "status": "pass"
+    },
+    {
+      "name": "test_order_selection_uses_forecast_validation_not_AIC",
+      "suite": "tests.test_protocol_revision",
+      "status": "pass"
+    },
+    {
+      "name": "test_later_windows_do_not_overlap_and_have_causal_training",
+      "suite": "tests.test_protocol_revision",
+      "status": "pass"
+    },
+    {
+      "name": "test_sign_selection_does_not_receive_original_evaluation",
+      "suite": "tests.test_protocol_revision",
+      "status": "pass"
+    },
+    {
+      "name": "test_noise_has_separate_analysis_and_known_noise_floor",
+      "suite": "tests.test_protocol_revision",
+      "status": "pass"
+    },
+    {
+      "name": "test_detect_shifted_origins_actuals_and_missing_rows",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_detect_leaked_scaling_and_current_target_oracle",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_detect_update_before_prediction",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_runner_calls_real_predict_before_observe",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_baseline_calls_forecast_before_append",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_detect_bad_structural_state",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_timestamp_audit_uses_original_timestamp_representation",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    },
+    {
+      "name": "test_bad_data_checksum_saves_failed_audit",
+      "suite": "tests.test_validation",
+      "status": "pass"
+    }
+  ],
+  "status": "pass_with_skips"
+}

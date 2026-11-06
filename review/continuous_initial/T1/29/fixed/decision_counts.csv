@@ -1,0 +1,5 @@
+phase,operation,status,reason,count
+development,growth,disabled,fixed_hierarchy,2136
+development,pruning,disabled,fixed_hierarchy,2136
+evaluation,growth,disabled,fixed_hierarchy,1008
+evaluation,pruning,disabled,fixed_hierarchy,1008

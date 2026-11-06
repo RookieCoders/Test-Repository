@@ -1,0 +1,7 @@
+phase,operation,status,reason,count
+development,growth,not_proposed,loss_threshold_not_met,1588
+development,growth,not_proposed,patience_not_met,548
+development,pruning,not_proposed,no_eligible_non_root_level,2136
+evaluation,growth,not_proposed,loss_threshold_not_met,776
+evaluation,growth,not_proposed,patience_not_met,232
+evaluation,pruning,not_proposed,no_eligible_non_root_level,1008

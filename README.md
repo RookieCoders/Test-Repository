@@ -148,3 +148,11 @@ settings before evaluating T1/T10 for 1,008 uninterrupted hourly targets after
 and reruns revised-selector ARIMA, persistence and seasonal naive. Frozen settings
 are in configs/frozen_primary_continuous.json when generated; no full-calendar
 claim or automatic expansion follows from this initial continuation.
+
+Completed frozen-run results and rolling/cumulative plots are in
+[review/continuous_initial/RESULTS.md](review/continuous_initial/RESULTS.md).
+The saved-results notebook is notebooks/06_frozen_continuous_report.ipynb; it
+reads evidence only and never launches training. Macro MASE favored revised ARIMA
+(0.687671), followed by persistence (0.722757), primary descent (0.733095), fixed
+hierarchy (0.733965) and seasonal naive (0.951769). No primary growth/pruning was
+proposed. No larger study or post-evaluation parameter tuning was launched.
