@@ -158,7 +158,7 @@ def write_audit(output, y, cfg, frame, state, provenance=None, timestamps=None, 
             validate_structure(restored['model'])
             a,b=restored['model'],state['model']
             for field in ['projection','readout']:np.testing.assert_array_equal(getattr(a,field),getattr(b,field))
-            for field in ['next_uid','observations','high_count','surprise_ema','events']:
+            for field in ['next_uid','observations','high_count','surprise_ema','events','decisions']:
                 if getattr(a,field)!=getattr(b,field):raise ValueError('Restored '+field+' differs')
             if a.previous is not None:
                 for x,z in zip(a.previous,b.previous):np.testing.assert_array_equal(x,z)

@@ -1,0 +1,21 @@
+{
+  "electricity_windows": {
+    "development": 2160,
+    "steps": 2160,
+    "evaluation_starts": ["2012-07-01", "2013-04-01", "2014-04-01"],
+    "history_policy": "independent rolling-history windows; reset each customer/model per window",
+    "aggregation": "first seeds within customer/window, then windows within customer, then macro customers; windows are temporally dependent"
+  },
+  "controlled_long": {
+    "development": 720,
+    "steps": 1008,
+    "series": 1,
+    "season": 24,
+    "refit_every": 168,
+    "orders": [[1,0,0], [2,0,0], [1,1,0]],
+    "order_selection": "chronological_validation",
+    "seeds": [101,211,307,401,503],
+    "post_change_observations": 672,
+    "run_automatically": false
+  }
+}

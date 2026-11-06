@@ -1,0 +1,233 @@
+[
+  {
+    "group": "quick_comparison",
+    "run": "T1/17/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T1/29/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T1/43/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T10/17/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T10/29/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T10/43/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T100/17/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T100/29/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T100/43/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T101/17/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T101/29/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T101/43/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T102/17/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T102/29/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_comparison",
+    "run": "T102/43/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "bounded_pilot",
+    "run": "T1/17/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "bounded_pilot",
+    "run": "T1/29/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "bounded_pilot",
+    "run": "T1/43/adaptive",
+    "predictions_match": true,
+    "growth_proposals": 0,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/17/adaptive/abrupt",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/17/adaptive/gradual",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/17/adaptive/noise",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/17/adaptive/recurring",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/17/adaptive/stationary",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/29/adaptive/abrupt",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/29/adaptive/gradual",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/29/adaptive/noise",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/29/adaptive/recurring",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/29/adaptive/stationary",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/43/adaptive/abrupt",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/43/adaptive/gradual",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/43/adaptive/noise",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/43/adaptive/recurring",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  },
+  {
+    "group": "quick_controlled",
+    "run": "17/43/adaptive/stationary",
+    "predictions_match": true,
+    "growth_proposals": 1,
+    "pruning_proposals": 0
+  }
+]

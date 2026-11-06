@@ -32,5 +32,6 @@
   "ablation_series": 1,
   "ablation_seeds": [
     17
-  ]
+  ],
+  "frequency_sign": "literal_ascent"
 }

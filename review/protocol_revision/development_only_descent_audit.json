@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-06T13:57:29.966913+00:00",
+  "configuration": {
+    "development": 540,
+    "steps": 180,
+    "series": 1,
+    "refit_every": 24,
+    "orders": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "season": 24,
+    "seeds": [
+      17
+    ],
+    "order_selection": "chronological_validation"
+  },
+  "model_configuration": {
+    "method": "DNH-inspired v1 (not faithful DNH-HOPE)",
+    "lag": 24,
+    "width": 6,
+    "initial_levels": 2,
+    "max_levels": 4,
+    "rho": 0.5,
+    "learning_rate": 0.003,
+    "ridge": 0.001,
+    "smm_weight": 0.1,
+    "smm_rate": 0.1,
+    "hebbian_alpha": 0.02,
+    "min_frequency": 0.05,
+    "meta_every": 8,
+    "meta_rate": 0.02,
+    "finite_difference": 0.001,
+    "meta_gradient_clip": 0.2,
+    "gradient_clip": 3.0,
+    "growth_threshold": 0.5,
+    "prune_threshold": 0.02,
+    "patience": 8,
+    "merge_rank": 2,
+    "merge_tolerance": 0.01,
+    "complexity_weight": 0.001,
+    "drift_weight": 0.1,
+    "surprise_cap": 25.0,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "ablation_series": 1,
+    "ablation_seeds": [
+      17
+    ],
+    "frequency_sign": "descent"
+  },
+  "git": {
+    "commit": "4dfd27b7184802ad75d3f621651a749ca5508421",
+    "commit_status": "available",
+    "dirty": true,
+    "working_tree_code_sha256": "d5aef5152462ef76d757128d88b9222de89874cf1071db2c8fa161cd85d0565d"
+  },
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8",
+    "statsmodels": "0.15.0",
+    "psutil": "7.2.2",
+    "requests": "2.34.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "ipykernel": "7.4.0",
+    "pytest": "9.2.0"
+  },
+  "dataset": {
+    "kind": "original_electricity",
+    "series": "T1 development prefix",
+    "archive_path": "/workspace/Test-Repository/data/raw/electricity_hourly_dataset.zip",
+    "archive_sha256": "eff447075dde68dca0105ab7e2851c5637967ae3bb21556fd8b931f196d5968c",
+    "source_checksum": "md5:18096614662b02640d265ad2a6a416bd",
+    "series_sha256": "6494e26ea9fd200ebd8b23b6ca0fc28b6bec08323d561d9f7257770b8b278cfc",
+    "modification": null,
+    "input_series_sha256": "6494e26ea9fd200ebd8b23b6ca0fc28b6bec08323d561d9f7257770b8b278cfc"
+  },
+  "seeds": {
+    "model": 17,
+    "generator": null
+  },
+  "checks": [
+    {
+      "name": "data_integrity",
+      "status": "pass"
+    },
+    {
+      "name": "observation_origin",
+      "status": "pass"
+    },
+    {
+      "name": "chronology_alignment_errors_and_MASE",
+      "status": "pass"
+    },
+    {
+      "name": "development_only_scaler",
+      "status": "pass"
+    },
+    {
+      "name": "predict_reveal_record_update",
+      "status": "pass"
+    },
+    {
+      "name": "checkpoint_deserialization_and_state",
+      "status": "pass"
+    },
+    {
+      "name": "structural_state_invariants",
+      "status": "pass"
+    },
+    {
+      "name": "behavioral_resume_and_future_perturbation",
+      "status": "skipped",
+      "reason": "Run python scripts/audit.py for independent behavioral tests; not replayed per experiment"
+    },
+    {
+      "name": "scientific_validity_and_DNH_fidelity",
+      "status": "skipped",
+      "reason": "Software checks cannot establish method fidelity or scientific validity; see docs/DNH_INSPIRED.md"
+    }
+  ],
+  "status": "pass_with_skips",
+  "code_fingerprint": "d9e1d426a44ab53e19bf2eab2eb48e4f9ff1528e27e0b69f15f79a5040f36d1b",
+  "prediction_sha256": "8625d2c0b1d76342b2b6cead9d260aa05fbb28da6df9d3d060a7fcc2352e49a1"
+}

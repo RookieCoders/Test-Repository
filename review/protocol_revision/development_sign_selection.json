@@ -1,0 +1,9 @@
+{
+  "selected_sign": "descent",
+  "selection_metric": "mean development-validation MAE across model seeds",
+  "train_end_exclusive": 540,
+  "validation_end_exclusive": 720,
+  "original_evaluation_accessed": false,
+  "automatic_change_to_primary_config": false,
+  "limitations": "One customer; exploratory choice is frozen here. No evaluation comparison or superiority claim."
+}
