@@ -47,6 +47,7 @@ def run_inspired(y,cfg,output,seed=17,variant='adaptive',timestamps=None,stop_af
     timer=time.perf_counter(); base_elapsed=state['elapsed_seconds']; initial=state['next']
     denominator=float(np.mean(abs(y[cfg['season']:n]-y[:n-cfg['season']])))
     model=state['model']; name='DNH-inspired:'+variant
+    if mc.get('frequency_sign','literal_ascent')=='descent':name+=':descent'
     for t in range(state['next'],end):
         if stop_after is not None and t-initial>=stop_after: break
         # Only past target values are transformed/passed into the forecast.
@@ -74,6 +75,12 @@ def run_inspired(y,cfg,output,seed=17,variant='adaptive',timestamps=None,stop_af
         state['peak_sampled_rss_mb']=max(state['peak_sampled_rss_mb'],process.memory_info().rss/2**20)
         state['elapsed_seconds']=base_elapsed+time.perf_counter()-timer
         atomic_pickle(checkpoint,state)
+    decisions=pd.DataFrame(model.decisions)
+    decisions['phase']=np.where(decisions.t<=n-lag,'development','evaluation')
+    decisions['target_index']=decisions.t+lag-1
+    decisions.to_json(out/'decisions.json',orient='records',indent=2,double_precision=15)
+    counts=decisions.groupby(['phase','operation','status','reason']).size().rename('count').reset_index()
+    counts.to_csv(out/'decision_counts.csv',index=False)
     frame=pd.DataFrame(state['rows']); frame.to_csv(out/'predictions.csv',index=False)
     pd.DataFrame(state['structure']).to_csv(out/'structure.csv',index=False)
     report={k:v for k,v in state.items() if k not in ['model','rows','structure']}

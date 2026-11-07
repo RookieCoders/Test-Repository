@@ -128,3 +128,14 @@ retrospectively incomplete audits; the separately instrumented 24-forecast pilot
 has per-experiment pass-with-skips reports. Historical null Git commits are
 preserved honestly. Download the branch ZIP from GitHub to obtain code and evidence
 together. No downloaded dataset, checkpoint or runtime directory is included.
+
+## Protocol review after initial pilots
+
+[Protocol revisions and structural counts](docs/PROTOCOL_REVISION.md) distinguish
+checks, proposals, accepted changes, rejected changes and eligibility restrictions.
+A new literal-ascent/descent comparison uses only development data. New ARIMA
+orders use chronological development forecasting MAE; AIC is diagnostic only.
+The existing full mode is a 180-day prefix, not three-year coverage. Later-period
+window and longer controlled-study configurations are explicit opt-ins; neither
+was launched. Noise interventions now report sensitivity/known noise floors
+separately from recovery. Earlier metrics remain legacy protocol results.

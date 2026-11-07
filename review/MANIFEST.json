@@ -22,8 +22,8 @@
     },
     {
       "path": "README_FIRST.md",
-      "bytes": 2371,
-      "sha256": "f09d58dc9c6f2ddf7b09de763ee0eade00155df2c9eeac6156dee74898273e10"
+      "bytes": 2706,
+      "sha256": "83092a309a1dfde68b39ccffbb9892cd4a10ee91f9ef5811d26eca8acb3c0743"
     },
     {
       "path": "audited_quick_pilot_24/02_pilot_forecasting.ipynb",
@@ -386,6 +386,101 @@
       "sha256": "cc7c2969240cd48e4564e3ffc3d7b12d02e3730532f6a95ceb319dc4012e65de"
     },
     {
+      "path": "protocol_revision/README.md",
+      "bytes": 3769,
+      "sha256": "59a7163b5e0fc4fc0fd1bb171fb3c4e96bdb2708ad237f3a92576c43efd9d786"
+    },
+    {
+      "path": "protocol_revision/decision_counts_by_run.csv",
+      "bytes": 20099,
+      "sha256": "e85113fb8647f712b8dd966dbce9d39785029dc02d45def2a7abffd06d4a5972"
+    },
+    {
+      "path": "protocol_revision/decision_totals.csv",
+      "bytes": 1678,
+      "sha256": "b9228b681eb442073e4d5b6511d6ada392842568b42679966ff5b5632c6f9a67"
+    },
+    {
+      "path": "protocol_revision/decision_trace_example.json",
+      "bytes": 8660,
+      "sha256": "5d4371aa87fe7c9663d09f8bcda9cc09207dff7aa84c4af7d053811f02f1d178"
+    },
+    {
+      "path": "protocol_revision/development_activation_analysis.csv",
+      "bytes": 10962,
+      "sha256": "f88cf3da988ed82dffa7f4e70b3e4f5877b531bb273d7b71f499d94282354242"
+    },
+    {
+      "path": "protocol_revision/development_activation_counts.csv",
+      "bytes": 637,
+      "sha256": "99c184fec74ae1f320fc9b0fdb6ffa733b14caaa85fd79dc6c244210cfd4a7eb"
+    },
+    {
+      "path": "protocol_revision/development_only_descent_audit.json",
+      "bytes": 3561,
+      "sha256": "13924210de22510293b795df37a4574fe277f5ccc472546a80a4ca175e4c8785"
+    },
+    {
+      "path": "protocol_revision/development_sign_metrics.csv",
+      "bytes": 694,
+      "sha256": "b1a34b4e3b1f6cfe417e9679efe762e5fa8a7b59985c597ab74861a0759409cd"
+    },
+    {
+      "path": "protocol_revision/development_sign_selection.json",
+      "bytes": 377,
+      "sha256": "77389375476d4e953d642ba783c441969ab40d08f036e906413a4d9d5813a20d"
+    },
+    {
+      "path": "protocol_revision/historical_proposals_with_reasons.json",
+      "bytes": 5843,
+      "sha256": "22bcb0a02f3d345e7ce4e7fd53fcf307e3bb29f0968980d6f7881b0ea995110b"
+    },
+    {
+      "path": "protocol_revision/later_window_plan.csv",
+      "bytes": 2187,
+      "sha256": "8b9861f8a869896f5246d59e8de5d4cc8e3aa0fc0a91416933f36df9b12203d2"
+    },
+    {
+      "path": "protocol_revision/legacy_control_noise_reinterpretation.csv",
+      "bytes": 4650,
+      "sha256": "f4a398c75cad276295ff3cdbab57fd95d5dcde398a14064950635ae29c24a330"
+    },
+    {
+      "path": "protocol_revision/pruning_candidate_gate_totals.csv",
+      "bytes": 664,
+      "sha256": "e37f28c980a87c3110b91ed982e79285856aba303a54effdf741c738e3e06d7a"
+    },
+    {
+      "path": "protocol_revision/replay_verification.json",
+      "bytes": 5288,
+      "sha256": "2de9cba9371cde696a4af23a083323fbd845e0564fc51e5e00cfd0c93e5fd173"
+    },
+    {
+      "path": "protocol_revision/revised_ARIMA_quick_pilot_metrics.csv",
+      "bytes": 279,
+      "sha256": "0edf6769a3b2e6713c885821f26957dab3aee6b8a1e3ef2500bfb49fc8f778c7"
+    },
+    {
+      "path": "protocol_revision/revised_pilot_execution_log.json",
+      "bytes": 158,
+      "sha256": "a1430327e05dd9e26e363a455724ce6450707ff150320ac4de02a913747f3976"
+    },
+    {
+      "path": "protocol_revision/tests.log",
+      "bytes": 799,
+      "sha256": "98c28d06b19c732911623d7893d293cabc432f0fd97adb6783583786c66246e8"
+    },
+    {
+      "path": "protocol_revision/tests.xml",
+      "bytes": 3589,
+      "sha256": "80d0dd9f49c9c48c4620157ea2bb28d84a633c9d9438cf64d778eac729fbb9e8"
+    },
+    {
+      "path": "protocol_revision/validation_audit.json",
+      "bytes": 5426,
+      "sha256": "4d7133db5bab138fd0eeaf2c4a0615682be410a9219e537b2ab966aec469635a"
+    },
+    {
       "path": "validation_evidence/05_validation_smoke.executed.ipynb",
       "bytes": 5350,
       "sha256": "ed1f5267128e6bacd580a4919e3e9e90784d8ea4ac9c31f3c61b75cdd0ef80a6"
@@ -411,5 +506,5 @@
       "sha256": "6e049c188041c0422be35864920f8678a2bedac5c0d74a5d301a6ac519d89a52"
     }
   ],
-  "note": "Manifest excludes itself. Historical reports retain their original provenance; see the PR commit for current source."
+  "note": "Manifest excludes itself. Original and revised reports retain their actual execution provenance; see each report and PR commit."
 }

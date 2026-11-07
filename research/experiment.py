@@ -33,19 +33,46 @@ def atomic_pickle(path, obj):
     temp.replace(path)
 
 
-def choose_order(y, orders):
-    trials = []; best = None
-    for o in orders:
+def choose_order(y, orders, selection='chronological_validation'):
+    """Choose order on a chronological development tail, never evaluation data.
+
+    legacy_aic exists only for reproducing previously reported exploratory runs.
+    Validation state receives each newly revealed development target; parameters
+    stay fixed within this selection tail. Selected order is refit on all development.
+    """
+    if selection not in ['chronological_validation','legacy_aic']:raise ValueError('Unknown order selection')
+    y=np.asarray(y);validation_length=max(8,min(168,len(y)//4))
+    split=len(y)-validation_length
+    if split<16:raise ValueError('Insufficient development history for order selection')
+    trials=[];ranked=[]
+    for order in orders:
         try:
             with warnings.catch_warnings(record=True) as caught:
                 warnings.simplefilter('always')
-                fit = ARIMA(y, order=tuple(o)).fit()
-            converged = bool(fit.mle_retvals.get('converged', True))
-            trials.append({'order': o, 'aic': float(fit.aic), 'converged': converged,
-                           'warnings': [str(w.message) for w in caught]})
-            if converged and np.isfinite(fit.aic) and (best is None or fit.aic < best.aic): best = fit
-        except Exception as e: trials.append({'order': o, 'error': str(e)})
-    return best, trials
+                fit=ARIMA(y if selection=='legacy_aic' else y[:split],order=tuple(order)).fit()
+                converged=bool(fit.mle_retvals.get('converged',True))
+                errors=[]
+                if selection!='legacy_aic':
+                    for target in y[split:]:
+                        prediction=float(np.asarray(fit.forecast(1))[0])
+                        if not np.isfinite(prediction):raise ValueError('Invalid development forecast')
+                        errors.append(abs(target-prediction));fit=fit.append([target],refit=False)
+                score=float(fit.aic) if selection=='legacy_aic' else float(np.mean(errors))
+            trials.append({'order':order,'selection':selection,'score':score,'aic_diagnostic':float(fit.aic),
+                           'validation_start':None if selection=='legacy_aic' else split,
+                           'validation_end_exclusive':None if selection=='legacy_aic' else len(y),
+                           'converged':converged,'warnings':[str(w.message) for w in caught]})
+            if converged and np.isfinite(score):ranked.append((score,tuple(order)))
+        except Exception as e:trials.append({'order':order,'selection':selection,'error':str(e)})
+    for _,order in sorted(ranked):
+        try:
+            with warnings.catch_warnings(record=True) as caught:
+                warnings.simplefilter('always');fit=ARIMA(y,order=order).fit()
+            if not fit.mle_retvals.get('converged',True):raise ValueError('Selected-order development refit did not converge')
+            trials.append({'stage':'development_refit','order':order,'warnings':[str(w.message) for w in caught]})
+            return fit,trials
+        except Exception as e:trials.append({'stage':'development_refit','order':order,'error':str(e)})
+    return None,trials
 
 
 def run_stream(y, cfg, output, timestamps=None, stop_after=None, provenance=None):
@@ -66,7 +93,7 @@ def run_stream(y, cfg, output, timestamps=None, stop_after=None, provenance=None
         with checkpoint.open('rb') as f: state = pickle.load(f)
         if state['fingerprint'] != fingerprint: raise ValueError('Checkpoint data/config/version mismatch; choose a new output directory.')
     else:
-        fit, trials = choose_order(y[:n], cfg['orders'])
+        fit, trials = choose_order(y[:n], cfg['orders'],cfg.get('order_selection','chronological_validation'))
         state = {'fingerprint':fingerprint, 'next':n, 'fit':fit,
                  'order':list(fit.model.order) if fit is not None else None,
                  'trials':trials, 'rows':[], 'protocol':[], 'events':[], 'elapsed_seconds':0., 'peak_sampled_rss_mb':0.}
@@ -102,7 +129,9 @@ def run_stream(y, cfg, output, timestamps=None, stop_after=None, provenance=None
                 with warnings.catch_warnings(record=True) as caught:
                     warnings.simplefilter('always')
                     if (t-n+1) % cfg['refit_every'] == 0 or fit is None:
-                        if state['order'] is None: fit, _ = choose_order(y[:t+1], cfg['orders'])
+                        if state['order'] is None:
+                            fit, _ = choose_order(y[:n],cfg['orders'],cfg.get('order_selection','chronological_validation'))
+                            if fit is not None:fit=ARIMA(y[:t+1],order=fit.model.order).fit()
                         else: fit = ARIMA(y[:t+1], order=tuple(state['order'])).fit()
                         if fit is not None and not fit.mle_retvals.get('converged',True):
                             raise RuntimeError('Refit did not converge')

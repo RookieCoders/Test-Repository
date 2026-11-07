@@ -1,0 +1,16 @@
+run,growth,pruning,growth_proposals,prune_proposals,growth_development,growth_continuation
+101/17/adaptive/abrupt,2,0,2,0,0,2
+101/17/adaptive/gradual,1,0,1,0,0,1
+101/17/adaptive/noise,1,0,2,0,0,1
+101/17/adaptive/recurring,1,0,1,0,0,1
+101/17/adaptive/stationary,0,0,0,0,0,0
+211/17/adaptive/abrupt,2,0,2,0,0,2
+211/17/adaptive/gradual,1,0,3,0,0,1
+211/17/adaptive/noise,0,0,0,0,0,0
+211/17/adaptive/recurring,2,0,2,0,0,2
+211/17/adaptive/stationary,0,0,0,0,0,0
+307/17/adaptive/abrupt,1,0,1,0,0,1
+307/17/adaptive/gradual,0,0,0,0,0,0
+307/17/adaptive/noise,0,0,0,0,0,0
+307/17/adaptive/recurring,1,0,1,0,0,1
+307/17/adaptive/stationary,0,0,0,0,0,0

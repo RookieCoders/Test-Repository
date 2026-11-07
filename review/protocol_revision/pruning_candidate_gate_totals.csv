@@ -1,0 +1,13 @@
+group,phase,gate,count
+quick_controlled,development,gradient_threshold_not_met,2485
+bounded_pilot,development,gradient_threshold_not_met,1974
+quick_comparison,development,gradient_threshold_not_met,1957
+quick_controlled,evaluation,gradient_threshold_not_met,478
+bounded_pilot,evaluation,gradient_threshold_not_met,454
+quick_comparison,evaluation,gradient_threshold_not_met,324
+quick_comparison,development,patience_not_met,203
+quick_controlled,development,patience_not_met,125
+bounded_pilot,development,patience_not_met,114
+bounded_pilot,evaluation,patience_not_met,50
+quick_comparison,evaluation,patience_not_met,36
+quick_controlled,evaluation,patience_not_met,2

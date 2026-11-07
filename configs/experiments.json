@@ -1,5 +1,95 @@
 {
-  "quick": {"development": 168, "steps": 24, "series": 5, "refit_every": 24, "orders": [[1,0,0], [1,1,0]], "season": 24, "seeds": [17]},
-  "pilot": {"development": 720, "steps": 168, "series": 5, "refit_every": 24, "orders": [[1,0,0], [2,0,0], [1,1,0], [1,1,1]], "season": 24, "seeds": [17,29,43]},
-  "full": {"development": 2160, "steps": 2160, "series": 10, "refit_every": 168, "orders": [[1,0,0], [2,0,0], [1,1,0], [1,1,1]], "season": 24, "seeds": [17,29,43]}
+  "quick": {
+    "development": 168,
+    "steps": 24,
+    "series": 5,
+    "refit_every": 24,
+    "orders": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ]
+    ],
+    "season": 24,
+    "seeds": [
+      17
+    ],
+    "order_selection": "chronological_validation"
+  },
+  "pilot": {
+    "development": 720,
+    "steps": 168,
+    "series": 5,
+    "refit_every": 24,
+    "orders": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "season": 24,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "order_selection": "chronological_validation"
+  },
+  "full": {
+    "development": 2160,
+    "steps": 2160,
+    "series": 10,
+    "refit_every": 168,
+    "orders": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "season": 24,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "order_selection": "chronological_validation"
+  }
 }

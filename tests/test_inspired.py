@@ -84,7 +84,7 @@ def test_resume_restores_grown_topology_and_all_optimizer_states(tmp_path):
     for directory in ['continuous','interrupted']:
         with (tmp_path/directory/'checkpoint.pkl').open('rb') as f: states.append(pickle.load(f))
     a,b=[s['model'] for s in states]
-    assert a.next_uid==b.next_uid and a.events==b.events
+    assert a.next_uid==b.next_uid and a.events==b.events and a.decisions==b.decisions
     assert len(a.levels)==len(b.levels)==3
     for x,z in zip(a.levels,b.levels):
         for name in ['W','S','m','v','gate']: np.testing.assert_array_equal(getattr(x,name),getattr(z,name))

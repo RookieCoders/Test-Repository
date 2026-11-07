@@ -96,3 +96,13 @@ correct. A negative result likewise cannot refute the original method. Benefits
 cannot be attributed to growth/pruning if neither activates. Frozen seeded query
 maps, tiny memories, greedy structural proposals, soft hypergradient surrogate,
 approximate merges and the literal positive gradient sign are substantive limits.
+
+## Subsequent protocol review
+
+The literal-sign model remains available for reproduction. A separately labeled
+descent variant was compared using development-only data; no original evaluation
+observations selected its sign. Structural gates/proposals/rejections now have
+explicit reason traces. Noise-only recovery is not applicable; new ARIMA selection
+uses chronological development MAE. Later-period and longer controlled protocols
+are opt-in. See [PROTOCOL_REVISION.md](PROTOCOL_REVISION.md) for actual bounded
+findings and the distinction between historical and revised results.

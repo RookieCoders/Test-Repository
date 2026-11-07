@@ -12,3 +12,7 @@ No full study was launched to create this package. Plots were rendered only from
 - MANIFEST.json: per-file byte counts and SHA256 digests. Paths in historical reports refer to the originating cloud workspace, not necessarily your extraction directory.
 
 Software audit success is not proof of DNH fidelity, scientific validity or superiority. No accepted electricity growth/pruning occurred with the frozen settings. In the 168-forecast pilot, fixed/adaptive mean MASE was 0.472558/0.476302, versus persistence 0.426124 and ARIMA 0.568172. These are preliminary, small-sample results. Full runs remain opt-in.
+
+## Follow-up protocol review
+
+See [protocol_revision/README.md](protocol_revision/README.md) for structural gate/proposal counts, rejection reasons, development-only sign comparison, longer development controls, later-period plans, revised ARIMA selection, and corrected noise interpretation. Historical files above remain unchanged.

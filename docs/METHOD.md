@@ -63,7 +63,10 @@ policy per customer. No cross-series pooling is authorized for the primary
 comparison. All neural seeds and structural ablations remain unrun pending this
 method decision. It is not legitimate to infer DNH-vs-ARIMA performance now.
 
-## Baseline protocol implemented
+## Historical baseline protocol (superseded for new runs)
+
+The description below records the original AIC-based selector. New runs use
+chronological development validation; see [PROTOCOL_REVISION.md](PROTOCOL_REVISION.md).
 
 One-step-ahead chronological prefix development/evaluation; no normalization,
 interpolation or winsorization. Seasonal lag 24; MASE denominator from development

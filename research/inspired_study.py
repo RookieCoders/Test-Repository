@@ -9,7 +9,7 @@ from .synthetic import processes,change_analysis
 from .validation import source
 
 
-def compare_streams(streams,cfg,output,seeds=None,variants=('adaptive','fixed'),provenance_by_series=None):
+def compare_streams(streams,cfg,output,seeds=None,variants=('adaptive','fixed'),provenance_by_series=None,model_cfg=None):
     out=Path(output);out.mkdir(parents=True,exist_ok=True)
     seeds=inspired_config()['seeds'] if seeds is None else seeds
     rows=[];costs=[]
@@ -19,13 +19,13 @@ def compare_streams(streams,cfg,output,seeds=None,variants=('adaptive','fixed'),
         m=metrics(baseline);m['series']=sid;m['seed']=np.nan;rows.append(m)
         for seed in seeds:
             for variant in variants:
-                pred,r=run_inspired(y,cfg,out/sid/str(seed)/variant,seed,variant,index,provenance=provenance)
+                pred,r=run_inspired(y,cfg,out/sid/str(seed)/variant,seed,variant,index,provenance=provenance,model_cfg=model_cfg)
                 m=metrics(pred);m['series']=sid;m['seed']=seed;rows.append(m)
                 costs.append({'series':sid,'seed':seed,'variant':variant,'seconds':r['elapsed_seconds'],
                               'development_seconds':r['development_seconds'],'rss_mb':r['peak_sampled_rss_mb'],
                               'growth':r['growth_count'],'pruning':r['pruning_count'],
-                              'growth_in_evaluation':sum(e['kind']=='growth' and e['t']>cfg['development']-inspired_config()['lag'] for e in r['events']),
-                              'pruning_in_evaluation':sum(e['kind']=='pruning' and e['t']>cfg['development']-inspired_config()['lag'] for e in r['events'])})
+                              'growth_in_evaluation':sum(e['kind']=='growth' and e['t']>cfg['development']-(model_cfg or inspired_config())['lag'] for e in r['events']),
+                              'pruning_in_evaluation':sum(e['kind']=='pruning' and e['t']>cfg['development']-(model_cfg or inspired_config())['lag'] for e in r['events'])})
     individual=pd.concat(rows,ignore_index=True);individual.to_csv(out/'metrics_by_series_seed.csv',index=False)
     # Average model seeds within customer FIRST; then give each customer equal weight.
     by_series=individual.groupby(['model','series']).agg(MASE=('MASE','mean'),MAE=('MAE','mean'),
@@ -45,13 +45,13 @@ def controlled(cfg,output,model_seeds=None):
     for generator_seed in cfg['seeds']:
         data=processes(cfg,generator_seed)
         baseline_runs={k:run_stream(s['values'],cfg,out/str(generator_seed)/'baselines'/k,provenance=source('synthetic',generator_seed=generator_seed,process=k))[0] for k,s in data.items()}
-        a=change_analysis(baseline_runs,data['abrupt']['change_point']);a['model_seed']=np.nan
+        a=change_analysis(baseline_runs,data['abrupt']['change_point'],oracle=data);a['model_seed']=np.nan
         a['generator_seed']=generator_seed;records.append(a)
         for model_seed in model_seeds:
             for variant in ['adaptive','fixed']:
                 runs={k:run_inspired(s['values'],cfg,out/str(generator_seed)/str(model_seed)/variant/k,
                                      model_seed,variant,provenance=source('synthetic',generator_seed=generator_seed,process=k))[0] for k,s in data.items()}
-                a=change_analysis(runs,data['abrupt']['change_point']);a['model_seed']=model_seed
+                a=change_analysis(runs,data['abrupt']['change_point'],oracle=data);a['model_seed']=model_seed
                 a['generator_seed']=generator_seed;records.append(a)
     result=pd.concat(records,ignore_index=True);result.to_csv(out/'controlled_analysis.csv',index=False)
     return result

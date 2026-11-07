@@ -29,6 +29,7 @@ class InspiredDNH:
         if variant not in ['adaptive','fixed','no_growth','no_pruning','no_frequency']:
             raise ValueError('Unknown ablation')
         self.variant = variant
+        if cfg.get('frequency_sign','literal_ascent') not in ['literal_ascent','descent']:raise ValueError('Invalid frequency sign')
         rng = np.random.default_rng(seed)
         d, lag = cfg['width'], cfg['lag']
         self.projection = rng.normal(size=(d,lag))/np.sqrt(lag)
@@ -43,6 +44,7 @@ class InspiredDNH:
         self.high_count = 0
         self.surprise_ema = 0.
         self.events = []
+        self.decisions = []
         self.observations = 0
 
     def context(self, window):
@@ -119,7 +121,7 @@ class InspiredDNH:
         for i,l in enumerate(self.levels):
             vals=[]; points=[]
             for sign in [-1,1]:
-                probe=copy.deepcopy(self)
+                probe=self._probe()
                 f=float(np.clip(l.frequency+sign*h,self.cfg['min_frequency'],1.))
                 probe.levels[i].frequency=f; points.append(f)
                 probe.inner_update(*self.previous,soft=True)
@@ -146,37 +148,77 @@ class InspiredDNH:
         parent.m.fill(0); parent.v.fill(0); parent.steps=0; parent.clock=0.; parent.low_count=0; parent.momentum=0.
         del self.levels[index]
 
+    def _probe(self):
+        # Telemetry is not part of optimization. Avoid copying growing audit logs.
+        probe=copy.copy(self)
+        for name,value in self.__dict__.items():
+            setattr(probe,name,[] if name in ['events','decisions'] else copy.deepcopy(value))
+        return probe
+
+    def _proposal_details(self,probe,key,base,target,kind):
+        before=self.meta_objective(key,base,target)
+        after=probe.meta_objective(key,base,target)
+        penalty=self.cfg['complexity_weight']*(1+self.cfg['width'])
+        penalty_change=penalty if kind=='growth' else -penalty
+        task_change=after-before-penalty_change
+        accepted=after<before if kind=='growth' else after<=before+self.cfg['merge_tolerance']
+        if accepted: reason='accepted'
+        elif kind=='growth':
+            reason='complexity_penalty_offsets_task_improvement' if task_change<0 else 'no_task_improvement'
+        else: reason='merged_task_loss_exceeds_saving_and_tolerance'
+        return {'accepted':bool(accepted),'reason':reason,'objective_before':before,
+                'objective_candidate':after,'weighted_task_loss_change':task_change,
+                'complexity_penalty_change':penalty_change,
+                'acceptance_tolerance':0. if kind=='growth' else self.cfg['merge_tolerance']}
+
     def structural_decisions(self,key,base,target,norms):
-        if self.variant=='fixed': return
+        t=self.observations
+        def log(operation,status,reason,**details):
+            self.decisions.append({'t':t,'operation':operation,'status':status,'reason':reason,
+                                   'levels':len(self.levels),**details})
+        if self.variant=='fixed':
+            for op in ['growth','pruning']:log(op,'disabled','fixed_hierarchy')
+            return
         objective=self.meta_objective(key,base,target)
         self.high_count=self.high_count+1 if objective>self.cfg['growth_threshold'] else 0
         for l,g in zip(self.levels,norms):
             l.low_count=l.low_count+1 if g<self.cfg['prune_threshold'] else 0
-        # At most one structural decision per observation, stable priority: growth then prune.
-        if self.variant!='no_growth' and self.high_count>=self.cfg['patience'] and len(self.levels)<self.cfg['max_levels']:
-            probe=copy.deepcopy(self); probe._grow(key)
-            candidate=probe.meta_objective(key,base,target)
-            accepted=candidate<objective
-            self.events.append({'kind':'growth_proposal','t':self.observations,'accepted':bool(accepted),
-                                'objective_before':objective,'objective_candidate':candidate})
+        growth_gate={'objective':objective,'threshold':self.cfg['growth_threshold'],
+                     'consecutive_steps':self.high_count,'required_steps':self.cfg['patience']}
+        if self.variant=='no_growth': log('growth','disabled','ablation',**growth_gate)
+        elif len(self.levels)>=self.cfg['max_levels']: log('growth','blocked','maximum_size',**growth_gate)
+        elif objective<=self.cfg['growth_threshold']: log('growth','not_proposed','loss_threshold_not_met',**growth_gate)
+        elif self.high_count<self.cfg['patience']: log('growth','not_proposed','patience_not_met',**growth_gate)
+        else:
+            probe=self._probe();probe._grow(key)
+            details=self._proposal_details(probe,key,base,target,'growth')
+            self.events.append({'kind':'growth_proposal','t':t,**details})
+            log('growth','accepted' if details['accepted'] else 'rejected',**details,**growth_gate)
             self.high_count=0
-            if accepted:
+            if details['accepted']:
                 self._grow(key)
-                self.events.append({'kind':'growth','t':self.observations,'uid':self.levels[-1].uid})
+                self.events.append({'kind':'growth','t':t,'uid':self.levels[-1].uid})
+                log('pruning','not_considered','accepted_growth_has_priority')
                 return
-        if self.variant!='no_pruning':
-            for i in range(len(self.levels)-1,0,-1):
-                if self.levels[i].low_count<self.cfg['patience']: continue
-                probe=copy.deepcopy(self); probe._prune(i)
-                candidate=probe.meta_objective(key,base,target)
-                accepted=candidate<=objective+self.cfg['merge_tolerance']
-                self.events.append({'kind':'prune_proposal','t':self.observations,'accepted':bool(accepted),
-                                    'uid':self.levels[i].uid,'objective_before':objective,'objective_candidate':candidate})
-                self.levels[i].low_count=0
-                if accepted:
-                    uid=self.levels[i].uid; self._prune(i)
-                    self.events.append({'kind':'pruning','t':self.observations,'uid':uid})
-                break
+        candidates=[{'uid':l.uid,'gradient_norm':float(g),'threshold':self.cfg['prune_threshold'],
+                     'consecutive_steps':l.low_count,'required_steps':self.cfg['patience'],
+                     'gate':'root_protected' if i==0 else 'gradient_threshold_not_met' if g>=self.cfg['prune_threshold']
+                     else 'patience_not_met' if l.low_count<self.cfg['patience'] else 'eligible'}
+                    for i,(l,g) in enumerate(zip(self.levels,norms))]
+        if self.variant=='no_pruning':log('pruning','disabled','ablation',candidates=candidates);return
+        if len(self.levels)==1:log('pruning','blocked','minimum_size_root_protected',candidates=candidates);return
+        for i in range(len(self.levels)-1,0,-1):
+            if self.levels[i].low_count<self.cfg['patience']:continue
+            probe=self._probe();probe._prune(i)
+            details=self._proposal_details(probe,key,base,target,'pruning')
+            uid=self.levels[i].uid
+            self.events.append({'kind':'prune_proposal','t':t,'uid':uid,**details})
+            log('pruning','accepted' if details['accepted'] else 'rejected',uid=uid,candidates=candidates,**details)
+            self.levels[i].low_count=0
+            if details['accepted']:
+                self._prune(i);self.events.append({'kind':'pruning','t':t,'uid':uid})
+            return
+        log('pruning','not_proposed','no_eligible_non_root_level',candidates=candidates)
 
     def observe(self,window,target):
         if not np.isfinite(target): return
@@ -190,8 +232,9 @@ class InspiredDNH:
             for l,g in zip(self.levels,grads):
                 g=float(np.clip(g,-self.cfg['meta_gradient_clip'],self.cfg['meta_gradient_clip']))
                 l.momentum=.9*l.momentum+.1*g
-                # Deliberately retain Eq. (5)'s PLUS sign, despite minimization tension.
-                l.frequency=float(np.clip(l.frequency+self.cfg['meta_rate']*g+l.momentum,
+                # Keep literal ascent available; descent is a separately labeled development variant.
+                direction=-1. if self.cfg.get('frequency_sign','literal_ascent')=='descent' else 1.
+                l.frequency=float(np.clip(l.frequency+direction*self.cfg['meta_rate']*g+direction*l.momentum,
                                           self.cfg['min_frequency'],1.))
         self.structural_decisions(key,base,target,norms)
         self.inner_update(key,base,target)
