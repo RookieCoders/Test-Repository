@@ -1,0 +1,392 @@
+{
+  "started_utc": "2026-11-06T16:31:09.861633+00:00",
+  "git": {
+    "commit": "c86ff8edc972810436b68db842ec91651f878a9e",
+    "commit_status": "available",
+    "dirty": false,
+    "working_tree_code_sha256": "5cfea9a8a3641eb188437ffcff155b92fc3b52a23359f08298e09916efcdeae5"
+  },
+  "freeze_sha256": "5457b9c3654d60e8ad3171f26d998aab7f5a22e7ac3dc6d3af098908effe6a2c",
+  "resume_requested": false,
+  "hardware": {
+    "device_used": "CPU",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "logical_cpus": 5,
+    "available_memory_gib": 32.250972747802734,
+    "gpu_required": false,
+    "gpu_probe": "No accelerator backend used; GPU availability not probed.",
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "2.2.3",
+      "statsmodels": "0.15.0",
+      "scipy": "1.17.0"
+    }
+  },
+  "status": "completed",
+  "completed_runs": [
+    {
+      "series": "T1",
+      "seed": null,
+      "variant": "baseline",
+      "relative_directory": "T1/baseline",
+      "wall_seconds": 31.372830154999974,
+      "evaluation_seconds": 20.085775256997294,
+      "training_and_evaluation_seconds": 30.988288098997145,
+      "development_seconds": 10.902512841999851,
+      "sampled_RSS_MB": 298.76953125,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T1/baseline",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "final_ARIMA_nobs": 3168,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T1",
+      "seed": 17,
+      "variant": "adaptive",
+      "relative_directory": "T1/17/adaptive",
+      "wall_seconds": 2.9881904690009833,
+      "evaluation_seconds": 1.556622112999321,
+      "training_and_evaluation_seconds": 2.606178188998456,
+      "development_seconds": 1.049556075999135,
+      "sampled_RSS_MB": 303.84765625,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T1/17/adaptive",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T1",
+      "seed": 17,
+      "variant": "fixed",
+      "relative_directory": "T1/17/fixed",
+      "wall_seconds": 1.9830489230007515,
+      "evaluation_seconds": 1.0937763239999185,
+      "training_and_evaluation_seconds": 1.6770851760011283,
+      "development_seconds": 0.5833088520012097,
+      "sampled_RSS_MB": 308.0390625,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T1/17/fixed",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T1",
+      "seed": 29,
+      "variant": "adaptive",
+      "relative_directory": "T1/29/adaptive",
+      "wall_seconds": 3.0210517039995466,
+      "evaluation_seconds": 1.5948673939965374,
+      "training_and_evaluation_seconds": 2.6530177569984517,
+      "development_seconds": 1.0581503630019142,
+      "sampled_RSS_MB": 307.93359375,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T1/29/adaptive",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T1",
+      "seed": 29,
+      "variant": "fixed",
+      "relative_directory": "T1/29/fixed",
+      "wall_seconds": 2.6291625230005593,
+      "evaluation_seconds": 1.6235292769997614,
+      "training_and_evaluation_seconds": 2.1913696029987477,
+      "development_seconds": 0.5678403259989864,
+      "sampled_RSS_MB": 309.65625,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T1/29/fixed",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T1",
+      "seed": 43,
+      "variant": "adaptive",
+      "relative_directory": "T1/43/adaptive",
+      "wall_seconds": 5.054488157999003,
+      "evaluation_seconds": 2.648005662998912,
+      "training_and_evaluation_seconds": 4.631556768999872,
+      "development_seconds": 1.9835511060009594,
+      "sampled_RSS_MB": 309.65625,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T1/43/adaptive",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T1",
+      "seed": 43,
+      "variant": "fixed",
+      "relative_directory": "T1/43/fixed",
+      "wall_seconds": 2.8206510310010344,
+      "evaluation_seconds": 1.1460169430029055,
+      "training_and_evaluation_seconds": 2.4935736260013073,
+      "development_seconds": 1.3475566829984018,
+      "sampled_RSS_MB": 310.5390625,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T1/43/fixed",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T10",
+      "seed": null,
+      "variant": "baseline",
+      "relative_directory": "T10/baseline",
+      "wall_seconds": 58.795644148001884,
+      "evaluation_seconds": 27.599970921997738,
+      "training_and_evaluation_seconds": 58.3688177719996,
+      "development_seconds": 30.768846850001864,
+      "sampled_RSS_MB": 310.54296875,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T10/baseline",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "final_ARIMA_nobs": 3168,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T10",
+      "seed": 17,
+      "variant": "adaptive",
+      "relative_directory": "T10/17/adaptive",
+      "wall_seconds": 3.2514600760005123,
+      "evaluation_seconds": 1.7214584600005765,
+      "training_and_evaluation_seconds": 2.8374624500029313,
+      "development_seconds": 1.1160039900023548,
+      "sampled_RSS_MB": 310.54296875,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T10/17/adaptive",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T10",
+      "seed": 17,
+      "variant": "fixed",
+      "relative_directory": "T10/17/fixed",
+      "wall_seconds": 2.258353917997738,
+      "evaluation_seconds": 1.107205028001772,
+      "training_and_evaluation_seconds": 1.9429901340008655,
+      "development_seconds": 0.8357851059990935,
+      "sampled_RSS_MB": 311.03125,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T10/17/fixed",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T10",
+      "seed": 29,
+      "variant": "adaptive",
+      "relative_directory": "T10/29/adaptive",
+      "wall_seconds": 4.852474915998755,
+      "evaluation_seconds": 2.611295142000017,
+      "training_and_evaluation_seconds": 4.226301560000138,
+      "development_seconds": 1.615006418000121,
+      "sampled_RSS_MB": 311.03125,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T10/29/adaptive",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T10",
+      "seed": 29,
+      "variant": "fixed",
+      "relative_directory": "T10/29/fixed",
+      "wall_seconds": 2.5162012749970017,
+      "evaluation_seconds": 1.2919468040017819,
+      "training_and_evaluation_seconds": 2.1824189230028423,
+      "development_seconds": 0.8904721190010605,
+      "sampled_RSS_MB": 311.5625,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T10/29/fixed",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T10",
+      "seed": 43,
+      "variant": "adaptive",
+      "relative_directory": "T10/43/adaptive",
+      "wall_seconds": 3.4858049099966593,
+      "evaluation_seconds": 1.8367313260023366,
+      "training_and_evaluation_seconds": 3.0198451739997836,
+      "development_seconds": 1.183113847997447,
+      "sampled_RSS_MB": 310.8984375,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T10/43/adaptive",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    },
+    {
+      "series": "T10",
+      "seed": 43,
+      "variant": "fixed",
+      "relative_directory": "T10/43/fixed",
+      "wall_seconds": 2.1163201439994737,
+      "evaluation_seconds": 1.0179059459987911,
+      "training_and_evaluation_seconds": 1.806643678999535,
+      "development_seconds": 0.7887377330007439,
+      "sampled_RSS_MB": 310.8984375,
+      "audit_status": "pass_with_skips",
+      "directory": "/workspace/Test-Repository/results/frozen_continuous_initial/T10/43/fixed",
+      "next_target": 3168,
+      "evaluation_segments": [
+        {
+          "start": 2160,
+          "end_exclusive": 3168,
+          "resumed": false
+        }
+      ],
+      "uninterrupted": true,
+      "complete": true,
+      "observed_supervised_pairs": 3144,
+      "expected_supervised_pairs": 3144,
+      "model_state_continuity": true
+    }
+  ],
+  "finished_utc": "2026-11-06T16:33:17.620420+00:00"
+}

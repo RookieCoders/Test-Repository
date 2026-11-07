@@ -31,6 +31,7 @@ def run_inspired(y,cfg,output,seed=17,variant='adaptive',timestamps=None,stop_af
                'code_sha256':hashlib.sha256(Path(__file__).read_bytes()+ (ROOT/'research/inspired.py').read_bytes()+ (ROOT/'research/validation.py').read_bytes()).hexdigest()}
     fingerprint=hashlib.sha256(y.tobytes()+json.dumps(signature,sort_keys=True).encode()).hexdigest()
     checkpoint=out/'checkpoint.pkl'; timer=time.perf_counter(); process=psutil.Process()
+    resumed=checkpoint.exists()
     if checkpoint.exists():
         with checkpoint.open('rb') as f: state=pickle.load(f)
         if state['fingerprint']!=fingerprint: raise ValueError('Inspired checkpoint data/config/code/version mismatch')
@@ -41,11 +42,14 @@ def run_inspired(y,cfg,output,seed=17,variant='adaptive',timestamps=None,stop_af
         z=(y[:n]-mean)/sd
         for t in range(lag,n): model.observe(z[t-lag:t],z[t])
         state={'fingerprint':fingerprint,'model':model,'mean':mean,'sd':sd,'next':n,'rows':[],
-               'structure':[],'protocol':[],'elapsed_seconds':time.perf_counter()-timer,
+               'structure':[],'protocol':[],'evaluation_segments':[],'elapsed_seconds':time.perf_counter()-timer,
                'development_seconds':time.perf_counter()-timer,'peak_sampled_rss_mb':process.memory_info().rss/2**20}
         atomic_pickle(checkpoint,state)
     timer=time.perf_counter(); base_elapsed=state['elapsed_seconds']; initial=state['next']
     denominator=float(np.mean(abs(y[cfg['season']:n]-y[:n-cfg['season']])))
+    cadence=cfg.get('checkpoint_every',1)
+    if not isinstance(cadence,int) or cadence<1:raise ValueError('checkpoint_every must be a positive integer')
+    if initial<end:state['evaluation_segments'].append({'start':initial,'end_exclusive':initial,'resumed':resumed})
     model=state['model']; name='DNH-inspired:'+variant
     if mc.get('frequency_sign','literal_ascent')=='descent':name+=':descent'
     for t in range(state['next'],end):
@@ -74,7 +78,9 @@ def run_inspired(y,cfg,output,seed=17,variant='adaptive',timestamps=None,stop_af
         state['next']=t+1
         state['peak_sampled_rss_mb']=max(state['peak_sampled_rss_mb'],process.memory_info().rss/2**20)
         state['elapsed_seconds']=base_elapsed+time.perf_counter()-timer
-        atomic_pickle(checkpoint,state)
+        state['evaluation_segments'][-1]['end_exclusive']=t+1
+        if (t-n+1)%cadence==0:atomic_pickle(checkpoint,state)
+    atomic_pickle(checkpoint,state)
     decisions=pd.DataFrame(model.decisions)
     decisions['phase']=np.where(decisions.t<=n-lag,'development','evaluation')
     decisions['target_index']=decisions.t+lag-1

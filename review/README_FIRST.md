@@ -16,3 +16,10 @@ Software audit success is not proof of DNH fidelity, scientific validity or supe
 ## Follow-up protocol review
 
 See [protocol_revision/README.md](protocol_revision/README.md) for structural gate/proposal counts, rejection reasons, development-only sign comparison, longer development controls, later-period plans, revised ARIMA selection, and corrected noise interpretation. Historical files above remain unchanged.
+
+## Frozen continuous-stream results
+
+[continuous_initial/RESULTS.md](continuous_initial/RESULTS.md) records the frozen
+primary, two uninterrupted 1,008-hour evaluations, revised ARIMA, rolling/cumulative
+errors, costs, structural activity and audit evidence. This is an initial 42-day
+continuation, not a three-year result. No parameter was retuned from these results.

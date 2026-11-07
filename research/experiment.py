@@ -89,6 +89,8 @@ def run_stream(y, cfg, output, timestamps=None, stop_after=None, provenance=None
                                  + Path(__file__).read_bytes() + Path(__file__).with_name('validation.py').read_bytes()
                                  + json.dumps({'timestamps':list(map(str,timestamps)) if timestamps is not None else None, 'provenance':provenance},sort_keys=True).encode()).hexdigest()
     checkpoint = out / 'checkpoint.pkl'
+    setup_timer=time.perf_counter()
+    resumed=checkpoint.exists()
     if checkpoint.exists():
         with checkpoint.open('rb') as f: state = pickle.load(f)
         if state['fingerprint'] != fingerprint: raise ValueError('Checkpoint data/config/version mismatch; choose a new output directory.')
@@ -96,8 +98,12 @@ def run_stream(y, cfg, output, timestamps=None, stop_after=None, provenance=None
         fit, trials = choose_order(y[:n], cfg['orders'],cfg.get('order_selection','chronological_validation'))
         state = {'fingerprint':fingerprint, 'next':n, 'fit':fit,
                  'order':list(fit.model.order) if fit is not None else None,
-                 'trials':trials, 'rows':[], 'protocol':[], 'events':[], 'elapsed_seconds':0., 'peak_sampled_rss_mb':0.}
+                 'trials':trials, 'rows':[], 'protocol':[], 'events':[], 'elapsed_seconds':0., 'peak_sampled_rss_mb':0.,
+                 'development_seconds':time.perf_counter()-setup_timer,'evaluation_segments':[]}
     t0 = time.perf_counter(); initial = state['next']; base_elapsed = state['elapsed_seconds']
+    cadence=cfg.get('checkpoint_every',1)
+    if not isinstance(cadence,int) or cadence<1:raise ValueError('checkpoint_every must be a positive integer')
+    if initial<end:state['evaluation_segments'].append({'start':initial,'end_exclusive':initial,'resumed':resumed})
     process = psutil.Process(); denom = np.mean(np.abs(y[cfg['season']:n] - y[:n-cfg['season']]))
     for t in range(state['next'], end):
         if stop_after is not None and t-initial >= stop_after: break
@@ -124,6 +130,8 @@ def run_stream(y, cfg, output, timestamps=None, stop_after=None, provenance=None
                                   'mase_denominator':float(denom), 'fallback':fallback if model=='ARIMA' else None})
         state['protocol'].append({'t':t,'phase':'record'})
         before = time.perf_counter()
+        update_kind='parameter_refit' if (t-n+1)%cfg['refit_every']==0 or fit is None else 'filter_append'
+        update_success=True
         try:
             if np.isfinite(actual):
                 with warnings.catch_warnings(record=True) as caught:
@@ -143,8 +151,10 @@ def run_stream(y, cfg, output, timestamps=None, stop_after=None, provenance=None
                 # Missing observations remain missing; advance Kalman state without imputation.
                 if fit is not None: state['fit'] = fit.append([np.nan], refit=False)
         except Exception as e:
+            update_success=False
             state['events'].append({'t':t,'kind':'update_failure','message':str(e)})
             state['fit'] = None  # recover next step using observed history, never stale state
+        state['events'].append({'t':t,'kind':'arima_update','method':update_kind,'success':update_success and state['fit'] is not None})
         if fallback: state['events'].append({'t':t,'kind':'forecast_fallback','message':fallback})
         state['events'].append({'t':t,'kind':'timing','forecast_seconds':forecast_seconds,
                                 'update_seconds':time.perf_counter()-before})
@@ -152,13 +162,15 @@ def run_stream(y, cfg, output, timestamps=None, stop_after=None, provenance=None
         state['next'] = t+1
         state['elapsed_seconds'] = base_elapsed + time.perf_counter()-t0
         state['peak_sampled_rss_mb'] = max(state['peak_sampled_rss_mb'], process.memory_info().rss/2**20)
-        atomic_pickle(checkpoint, state)
+        state['evaluation_segments'][-1]['end_exclusive']=t+1
+        if (t-n+1)%cadence==0:atomic_pickle(checkpoint,state)
+    atomic_pickle(checkpoint,state)
     frame = pd.DataFrame(state['rows'])
     frame.to_csv(out / 'predictions.csv', index=False)
     report = {k:v for k,v in state.items() if k not in ['fit','rows']}
     report.update({'config':cfg, 'hardware':hardware(), 'DNH':'Faithful DNH-HOPE not implemented; separate DNH-inspired v1: research/inspired.py',
                    'memory_measurement':'process RSS sampled per step, not allocation peak; includes shared interpreter',
-                   'timing_scope':'stream loop including prior checkpoint writes; excludes initial order search'})
+                   'timing_scope':'elapsed_seconds is evaluation loop incl periodic checkpoint writes; development_seconds reports initial selection/fitting separately; caller wall time includes final serialization/audits'})
     (out/'run.json').write_text(json.dumps(report, indent=2))
     report['audit_status'] = write_audit(out,y,cfg,frame,state,provenance,timestamps,
                                         {'model':None,'generator':(provenance or {}).get('generator_seed')})['status']

@@ -1,0 +1,94 @@
+{
+  "study": "initial_frozen_continuous_descent_v1",
+  "execution_commit": "c86ff8edc972810436b68db842ec91651f878a9e",
+  "freeze_sha256": "5457b9c3654d60e8ad3171f26d998aab7f5a22e7ac3dc6d3af098908effe6a2c",
+  "checks": [
+    {
+      "name": "frozen_before_evaluation",
+      "status": "pass"
+    },
+    {
+      "name": "protocol_hash_matches_execution",
+      "status": "pass"
+    },
+    {
+      "name": "all_14_runs_completed_uninterrupted",
+      "status": "pass"
+    },
+    {
+      "name": "T1/baseline/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T1/17/adaptive/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T1/17/fixed/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T1/29/adaptive/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T1/29/fixed/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T1/43/adaptive/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T1/43/fixed/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T10/baseline/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T10/17/adaptive/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T10/17/fixed/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T10/29/adaptive/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T10/29/fixed/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T10/43/adaptive/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "T10/43/fixed/per_experiment_audit",
+      "status": "pass"
+    },
+    {
+      "name": "final_cumulative_errors_equal_final_metrics",
+      "status": "pass"
+    },
+    {
+      "name": "ARIMA_actual_refit_schedule_and_hourly_updates",
+      "status": "pass"
+    }
+  ],
+  "skipped": [
+    {
+      "name": "per_experiment_full_behavioral_replay",
+      "reason": "Resume invariance tested on small synthetic cases; main study itself was one fresh uninterrupted segment per run"
+    },
+    {
+      "name": "scientific_validity_DNH_fidelity_full_calendar",
+      "reason": "Not established by software checks or two-customer, 42-day evaluation"
+    }
+  ],
+  "status": "pass_with_skips"
+}

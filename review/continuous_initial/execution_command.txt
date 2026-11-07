@@ -1,0 +1,1 @@
+MPLCONFIGDIR=/tmp/dnh-continuous-mpl OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 python scripts/run_continuous_study.py run
